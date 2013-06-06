@@ -42,3 +42,8 @@ gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in developm
 
 #User Authentication
 gem 'devise'
+
+#bootstrap
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails'
