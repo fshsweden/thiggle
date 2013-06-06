@@ -1,21 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  postid: 1
+  post_id: 1
+  user_id: 1
   title: MyString
+  category: MyString
   description: MyText
-  category: MyText
-  location: MyText
-  postdate: 2013-06-05 14:02:18
+  location: MyString
   price: 1
-  userid: 1
+  date: 2013-06-06 14:35:18
 
 two:
-  postid: 1
+  post_id: 1
+  user_id: 1
   title: MyString
+  category: MyString
   description: MyText
-  category: MyText
-  location: MyText
-  postdate: 2013-06-05 14:02:18
+  location: MyString
   price: 1
-  userid: 1
+  date: 2013-06-06 14:35:18

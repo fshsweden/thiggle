@@ -2,14 +2,14 @@
 
 <table>
   <tr>
-    <th>Postid</th>
+    <th>Post</th>
+    <th>User</th>
     <th>Title</th>
-    <th>Description</th>
     <th>Category</th>
+    <th>Description</th>
     <th>Location</th>
-    <th>Postdate</th>
     <th>Price</th>
-    <th>Userid</th>
+    <th>Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,14 +17,14 @@
 
 <% @postings.each do |posting| %>
   <tr>
-    <td><%= posting.postid %></td>
+    <td><%= posting.post_id %></td>
+    <td><%= posting.user_id %></td>
     <td><%= posting.title %></td>
-    <td><%= posting.description %></td>
     <td><%= posting.category %></td>
+    <td><%= posting.description %></td>
     <td><%= posting.location %></td>
-    <td><%= posting.postdate %></td>
     <td><%= posting.price %></td>
-    <td><%= posting.userid %></td>
+    <td><%= posting.date %></td>
     <td><%= link_to 'Show', posting %></td>
     <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
     <td><%= link_to 'Destroy', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
