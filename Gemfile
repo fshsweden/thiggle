@@ -47,3 +47,6 @@ gem 'devise'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
+
+#haml
+gem 'haml-rails', '>= 0.3.4', :group => :development
