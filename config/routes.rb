@@ -1,9 +1,12 @@
 Opus::Application.routes.draw do
+  get "home/index"
+
   devise_for :users
   
   #sign out fix - >
   #devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
   resources :postings
+  resources :home
 
 
   # The priority is based upon order of creation:
@@ -55,7 +58,7 @@ Opus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'Home#index'
 
   # See how all your routes lay out with "rake routes"
 
