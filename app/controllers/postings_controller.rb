@@ -41,6 +41,14 @@ class PostingsController < ApplicationController
   # POST /postings.json
   def create
     @posting = Posting.new(params[:posting])
+        @posting.date = Time.now
+    if user_signed_in? 
+      @posting.user_id = current_user.id
+    else 
+      @posting.user_id = 0
+    end
+
+
 
     respond_to do |format|
       if @posting.save
@@ -57,6 +65,7 @@ class PostingsController < ApplicationController
   # PUT /postings/1.json
   def update
     @posting = Posting.find(params[:id])
+
 
     respond_to do |format|
       if @posting.update_attributes(params[:posting])
