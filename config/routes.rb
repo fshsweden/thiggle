@@ -1,11 +1,11 @@
 Opus::Application.routes.draw do
   get "home/index"
 
-  devise_for :users
+  devise_for :user, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
   
   #sign out fix - >
   #devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
-  resources :postings
+  resources :posts
   resources :home
 
 

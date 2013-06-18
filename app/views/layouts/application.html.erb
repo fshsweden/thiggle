@@ -25,13 +25,17 @@
         </button>
  -->    
 
-        <a class="brand" href="#">localee</a>
+        <a class="brand" href="#">spacebook</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
-            <li class="active"><%= link_to "Postings", postings_path %></li>
+            <li class="active"><%= link_to "Postings", posts_path %></li>
             <li><a href="#">Jobs</a></li>
             <li><a href="#">Housing</a></li>
           </ul>
+  <%= form_tag posts_path, :method => :get do %>
+        <%= text_field_tag :q, params[:q] %>
+        <%= submit_tag "Search", :name => nil %>
+  <% end %>
         </div>
       </div>
     </div>
