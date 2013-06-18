@@ -2,11 +2,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    @posts = Post.all
     query_string = params[:q]  
     @search = Post.search do
       keywords(query_string)
     end
     @posts = @search.results
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
