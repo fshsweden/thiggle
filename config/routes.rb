@@ -8,7 +8,12 @@ Opus::Application.routes.draw do
   #sign out fix - >
   #devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
   resources :posts
-  resources :home
+  resources :home do
+    collection do
+      get :index
+      get :dashboard
+    end
+  end
 
 
   # The priority is based upon order of creation:

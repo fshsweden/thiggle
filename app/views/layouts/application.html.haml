@@ -23,7 +23,7 @@
                 %a{:href => "#"} Housing
             
             %ul.nav.pull-right
-              / search bar?
+              / search bar
               %li
                 = form_tag posts_path, :method => :get, :class => 'navbar-form pull-left' do
                   = text_field_tag :q, params[:q]
@@ -31,7 +31,7 @@
 
               / user
               - if user_signed_in?
-                %li = link_to current_user.email, edit_user_registration_path
+                %li= link_to "Hello, " + current_user.username, edit_user_registration_path
                 %li= link_to "Sign Out", destroy_user_session_path
                 - if current_user.admin?
                   %li= link_to "Admin Dashboard", posts_path
@@ -39,7 +39,7 @@
                 %li= link_to "Sign In", new_user_session_path
                 %li= link_to "Register", new_user_registration_path
 
-    .container
-      = yield
+  .container
+    = yield
 
 

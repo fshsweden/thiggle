@@ -43,6 +43,9 @@ gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in developm
 #User Authentication
 gem 'devise'
 
+#private messaging
+gem 'mailboxer'
+
 #bootstrap
 gem "therubyracer"
 gem 'bootstrap-sass'
