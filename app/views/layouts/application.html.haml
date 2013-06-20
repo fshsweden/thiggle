@@ -12,8 +12,8 @@
         .container
 
           / site logo
-          %a.brand{:href => "#"} spacebook
-          
+          %a.brand{:href => "/home"} spacebook
+
           .nav-collapse.collapse
             %ul.nav
               %li{:class => controller_name == 'posts' ? 'active' : ''}= link_to "Posts", posts_path
@@ -22,18 +22,22 @@
               %li
                 %a{:href => "#"} Housing
             
-            %form.navbar-form.pull-right
-              = form_tag posts_path, :method => :get do
-                = text_field_tag :q, params[:q]
-                = submit_tag "Search", :name => nil
+            %ul.nav.pull-right
+              / search bar?
+              %li
+                = form_tag posts_path, :method => :get, :class => 'navbar-form pull-left' do
+                  = text_field_tag :q, params[:q]
+                  = submit_tag "Search", :name => nil
+
+              / user
               - if user_signed_in?
-                = link_to current_user.email, edit_user_registration_path
-                = link_to "Sign Out", destroy_user_session_path
+                %li = link_to current_user.email, edit_user_registration_path
+                %li= link_to "Sign Out", destroy_user_session_path
                 - if current_user.admin?
-                  = link_to "Admin Dashboard", posts_path
+                  %li= link_to "Admin Dashboard", posts_path
               - else
-                = link_to "Sign In", new_user_session_path
-                = link_to "Register", new_user_registration_path
+                %li= link_to "Sign In", new_user_session_path
+                %li= link_to "Register", new_user_registration_path
 
     .container
       = yield
