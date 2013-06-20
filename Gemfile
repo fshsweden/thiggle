@@ -48,8 +48,7 @@ gem 'mailboxer'
 
 #bootstrap
 gem "therubyracer"
-gem "less-rails"
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
 
 #haml
 gem 'haml-rails', '>= 0.3.4', :group => :development

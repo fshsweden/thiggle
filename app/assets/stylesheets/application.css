@@ -11,8 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-/* for navbar-fixed-top */
-body {
-    padding-top: 40px
-}
