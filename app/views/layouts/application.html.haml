@@ -8,38 +8,36 @@
 
   %body
     .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
+      .container
+        
+        / site logo
+        %a.brand{:href => "/home"} DUOLOCAL
 
-          / site logo
-          %a.brand{:href => "/home"} DUOLOCAL
+        
+        %ul.nav
+          %li{:class => controller_name == 'posts' ? 'active' : ''}= link_to "Posts", posts_path
+          %li
+            %a{:href => "#"} Jobs
+          %li
+            %a{:href => "#"} Housing
+        
+          / search bar
+          %li
+            = form_tag posts_path, :method => :get, :class => 'navbar-form pull-left' do
+              = text_field_tag :q, params[:q], :class => "search-query", :placeholder => "Search"
+              
 
-          .navbar 
-            %ul.nav
-              %li{:class => controller_name == 'posts' ? 'active' : ''}= link_to "Posts", posts_path
-              %li
-                %a{:href => "#"} Jobs
-              %li
-                %a{:href => "#"} Housing
-            
-            %ul.nav.pull-right
-              / search bar
-              %li
-                = form_tag posts_path, :method => :get, :class => 'navbar-form pull-left' do
-                  = text_field_tag :q, params[:q], :class => "search-query", :placeholder => "Search"
-                  
+          / user
+          - if user_signed_in?
+            %li= link_to "Hello, " + current_user.username, edit_user_registration_path
+            %li= link_to "Sign Out", destroy_user_session_path
+            - if current_user.admin?
+              %li= link_to "Admin Dashboard", posts_path
+          - else
+            %li= link_to "Sign In", new_user_session_path
+            %li= link_to "Register", new_user_registration_path
 
-              / user
-              - if user_signed_in?
-                %li= link_to "Hello, " + current_user.username, edit_user_registration_path
-                %li= link_to "Sign Out", destroy_user_session_path
-                - if current_user.admin?
-                  %li= link_to "Admin Dashboard", posts_path
-              - else
-                %li= link_to "Sign In", new_user_session_path
-                %li= link_to "Register", new_user_registration_path
-
-  .container
-    = yield
+.container
+  = yield
 
 

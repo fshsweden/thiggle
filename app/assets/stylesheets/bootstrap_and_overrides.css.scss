@@ -1,6 +1,12 @@
+/*$linkColor:      #FF0000;
+$linkColorHover: #000;*/
+$navbarHeight: 42px;
+
+
 @import "bootstrap";
 body { padding-top: 60px; }
-@import "bootstrap-responsive";
+/*@import "bootstrap-responsive";
+*/
 
 #header {
 background-color: #83c441;
@@ -12,14 +18,39 @@ z-index: 100;
 }
 
 .navbar {
-	background-color: #4d4361;
-	height: 100px;
+	background-color: #8242c2;
 	width: 100%;
 
 }
 
+.navbar .brand{
+	color: #000;
+	text-shadow: 0 0 0 ;
+	&:hover, {
+		color: #FFFFFF;
+	}
 
-.brand{
-	color: #84bead;
 }
+
+.navbar .nav > li > a {
+	text-shadow: 0 0 0 ;
+	color: #000;
+	font-size: 13px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+.navbar .nav > li > a:hover {
+
+}
+
+.nav > li > a:focus, .navbar .nav > li > a:hover {
+background-color: #111111;
+color: #E0E0E0;
+text-decoration: none;
+}
+
+
+
+
 
