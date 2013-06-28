@@ -1,20 +1,20 @@
 !!!
 %html
   %head
-    %title CL+
+    %title thiggle
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags  
 
   %body
-    .navbar.navbar-inverse.navbar-fixed-top
+    .navbar.navbar-fixed-top
       .navbar-inner
         .container
 
           / site logo
-          %a.brand{:href => "/home"} spacebook
+          %a.brand{:href => "/home"} DUOLOCAL
 
-          .nav-collapse.collapse
+          .navbar 
             %ul.nav
               %li{:class => controller_name == 'posts' ? 'active' : ''}= link_to "Posts", posts_path
               %li
@@ -26,8 +26,8 @@
               / search bar
               %li
                 = form_tag posts_path, :method => :get, :class => 'navbar-form pull-left' do
-                  = text_field_tag :q, params[:q]
-                  = submit_tag "Search", :name => nil
+                  = text_field_tag :q, params[:q], :class => "search-query", :placeholder => "Search"
+                  
 
               / user
               - if user_signed_in?

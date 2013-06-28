@@ -4,9 +4,22 @@ body { padding-top: 60px; }
 
 #header {
 background-color: #83c441;
-height: 42px;
+height: 70px;
 margin-bottom: 0px;
 position: relative;
 text-align: right;
 z-index: 100;
 }
+
+.navbar {
+	background-color: #4d4361;
+	height: 100px;
+	width: 100%;
+
+}
+
+
+.brand{
+	color: #84bead;
+}
+
