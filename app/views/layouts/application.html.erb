@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<head>
+  <title>THIGGLE</title>  
+  <%= stylesheet_link_tag    "application", :media => "all" %>  
+  <%= javascript_include_tag "application" %>  
+  <%= csrf_meta_tags %> 
+   
+  <!-- <div class="navbar navbar-fixed-top">
+      <div class="container">
+		<a class="brand" href="#">THIGGLE</a>
+
+       	   	<li><a href="#">Jobs</a></li>
+        	<li><a href="#">Housing</a></li>
+        </ul>
+			
+	        <% if user_signed_in? %>
+	          <%= link_to "Hello, " + current_user.username, edit_user_registration_path, :class => 'pull-right' %>
+	          <%= link_to "Sign Out", destroy_user_session_path %>
+	          <% if current_user.admin? %>
+	            <%= link_to "Admin Dashboard", posts_path %>
+	            <% end %>
+	        <% else %>
+	          <%= link_to "Register", new_user_registration_path, :class => 'button-small purple_light rounded3 pull-right' %>     
+			  <%= link_to "Sign In", new_user_session_path, :class => 'button-small purple_light rounded3 pull-right' %>
+	          
+        
+	        <% end %>
+			<%= form_tag posts_path, :method => :get, :class => "navbar-form pull-right" do%>
+        	<%= text_field_tag :q, params[:q], :class => "search-query", :placeholder => "Search" %>
+ 		   	<% end %>
+			
+      </div> -->
+</head>  
+<body>
+	<div class="navbar navbar-fixed-top">  
+	  <div class="navbar-inner">  
+	    <div class="container">  
+			<a class="brand" href="#">thiggle</a>
+	        <ul class="nav nav-pills pull-left">
+	       	   	<li><%= link_to "Explore", posts_path %></li>
+			</ul>
+		    <ul class="nav nav-pills pull-right">
+				  <% if user_signed_in? %>
+		          <li><%= link_to current_user.username, edit_user_registration_path, :class => 'pull-right' %></li>
+		          <li><%= link_to "Sign Out", destroy_user_session_path %></li>
+		          <% if current_user.admin? %>
+		            <%= link_to "Admin Dashboard", posts_path %>
+		            <% end %>
+		        <% else %>
+	              <li><%= link_to "Register", new_user_registration_path, :class => 'pull-right' %> </li>    
+			      <li><%= link_to "Sign In", new_user_session_path, :class =>'button-small purple_light rounded3 pull-right' %></li>
+	            <% end %>
+				<%= form_tag posts_path, :method => :get, :class => "navbar-form pull-right" do%>
+	        	<%= text_field_tag :q, params[:q], :class => "search-query test", :placeholder => "Search" %>
+
+				<% end %>
+
+			</ul>
+	       
+
+	    </div>  
+		
+	  </div>  
+	</div> 
+
+
+
+
+
+
+<%= yield %>
+
+</body>
+</html>

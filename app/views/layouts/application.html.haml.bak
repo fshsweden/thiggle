@@ -11,7 +11,7 @@
       .container
         
         / site logo
-        %a.brand{:href => "/home"} DUOLOCAL
+        %a.brand{:href => "/home"} THIGGLE
 
         
         %ul.nav
@@ -26,18 +26,18 @@
             = form_tag posts_path, :method => :get, :class => 'navbar-form pull-left' do
               = text_field_tag :q, params[:q], :class => "search-query", :placeholder => "Search"
               
-
-          / user
-          - if user_signed_in?
-            %li= link_to "Hello, " + current_user.username, edit_user_registration_path
-            %li= link_to "Sign Out", destroy_user_session_path
-            - if current_user.admin?
-              %li= link_to "Admin Dashboard", posts_path
-          - else
-            %li= link_to "Sign In", new_user_session_path
-            %li= link_to "Register", new_user_registration_path
+      
 
 .container
+  - if user_signed_in?
+    %li= link_to "Hello, " + current_user.username, edit_user_registration_path
+    %li= link_to "Sign Out", destroy_user_session_path
+    - if current_user.admin?
+      %li= link_to "Admin Dashboard", posts_path
+  - else
+    %li= link_to "Register", new_user_registration_path
+    .pull-right
+      %li= link_to "Sign In", new_user_session_path, :class => 'button-small    salmon_normal rounded3'
   = yield
 
 

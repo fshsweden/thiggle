@@ -1,6 +1,6 @@
 /*$linkColor:      #FF0000;
 $linkColorHover: #000;*/
-$navbarHeight: 42px;
+//$navbarHeight: 42px;
 
 
 @import "bootstrap";
@@ -17,31 +17,57 @@ text-align: right;
 z-index: 100;
 }
 
-.navbar {
-	background-color: #8242c2;
-	width: 100%;
+.navbar-inner {
 
+	background-color: #525C5B; /* background color will be black for all browsers */
+    background-image: none;
+    background-repeat: no-repeat;
+    filter: none;
+	
 }
+.navbar-inner .container {width:704px;}
 
 .navbar .brand{
-	color: #000;
+	color: #fff;
 	text-shadow: 0 0 0 ;
 	&:hover, {
 		color: #FFFFFF;
 	}
+	text-align:center;
+	font-family: 'Open Sans', sans-serif;
 
+}
+
+.navbar .nav .test{
+ font-size: 13px;
+ -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+         border-radius: 0 !important;
+		 height: 15px;
+		 margin-top: 9px;
+
+}
+.input-append button.add-on {
+    height: inherit !important;
 }
 
 .navbar .nav > li > a {
 	text-shadow: 0 0 0 ;
 	color: #000;
 	font-size: 13px;
-	font-family: Helvetica, Arial, sans-serif;
-	font-weight: bold;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//	font-weight: bold;
+	padding: 5px 5px 4px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	height: 13px;
+	line-height: 12px;
 }
 
 .navbar .nav > li > a:hover {
-
+	background-color: #525C5B;
 }
 
 .nav > li > a:focus, .navbar .nav > li > a:hover {
@@ -51,6 +77,162 @@ text-decoration: none;
 }
 
 
+h1{
+	text-align:center;
+}
+ul{
+	width:auto;
+}
+li{
+	list-style:none;
+	float:left;
+	margin:10px;
+}
+.button-small{
+    color: #fff !important;
+    word-spacing: 0.25em;
+   font-family: 'Open Sans', sans-serif;
+  // text-transform: uppercase;
+   border: none;
+    line-height: 22px;
+    padding: 12px 13px 11px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 18px;
+    text-decoration: none;
+}
+.button-small:visited{
+      color: #fff;
+}
+.button-small{
+    padding: 6px 12px 5px;
+    font-size: 11px;
+    color: #fff;
+    text-shadow: none;
+}
+.button-small:hover{
+    color: rgba(255,255,255, 0.75);
+    text-decoration: none;
+    -webkit-box-shadow:inset 0 10px 20px rgba(255,255,255, 0.10);
+    -moz-box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
+    box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
+}
+.button-small:active {
+    -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+    -moz-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+    box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+}
+.rounded3 {
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.brown_dark{
+    background: #4E2500;     
+}
+.brown_normal{
+    background: #783A00;     
+}
+.brown_light{
+    background: #BC8654;     
+}
+
+.salmon_dark {
+    background: #8A1215;
+}
+.salmon_normal {
+    background: #d5383c;
+}
+.salmon_light {
+    background: #EA8B8E;
+}
+
+.purple_dark {
+    background: #6B63CF;
+}
+.purple_normal {
+    background: #938DE7;
+}
+.purple_light {
+    background: #AAA5E7;
+}
+.orange_dark {
+	background: #f76b16;      
+}
+.orange_normal {
+    background: #FB9150;     
+}
+.orange_light {
+    background: #FBAD7D;     
+}
+
+.blue_dark {
+	background: #3b5998;    
+}
+.blue_normal {
+    background: #6E8CCC;    
+}
+.blue_light {
+    background: #879DCC;    
+}
+
+.red_dark {
+	background: #d74340;      
+}
+.red_normal {
+    background: #EB726F;      
+}
+.red_light {
+    background: #EB9390;      
+}
+.green_dark {
+	background: #4B701D;
+}
+.green_normal {
+    background: #87ac5a;
+}
+.green_light {
+    background: #B3D689;
+}
+.grey_dark {
+	background: #474747;    
+}
+.grey_normal {
+    background: #5e5e5e;    
+}
+.grey_light {
+    background: #AFAFAF;    
+}
+
+label, .controls { display: inline-block; }
+
+#magnifying-glass
+{
+ font-size: 10em; /* This controls the size. */
+ display: inline-block;
+ width: 0.4em;
+ height: 0.4em;
+ border: 0.1em solid red;
+ position: relative;
+ border-radius: 0.35em;
+}
+#magnifying-glass::before
+{
+ content: "";
+ display: inline-block;
+ position: absolute;
+ right: -0.25em;
+ bottom: -0.1em;
+ border-width: 0;
+ background: red;
+ width: 0.35em;
+ height: 0.08em;
+ -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+}
 
 
-
+     
