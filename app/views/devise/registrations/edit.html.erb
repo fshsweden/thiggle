@@ -1,3 +1,5 @@
+<div class= "span1 pull-right"></div>
+<div class="well well-small span3  pull-right">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
@@ -22,11 +24,11 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
-  <div><%= f.submit "Update" %></div>
+  <div><%= f.submit "UPDATE", :class => "button-small green_normal rounded3" %></div>
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+<p><%= button_to "DELETE ACCOUNT", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => "button-small red_normal rounded3" %></p>
 
 <%= link_to "Back", :back %>
+</div>

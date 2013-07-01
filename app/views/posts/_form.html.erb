@@ -1,7 +1,7 @@
 
 <%= form_for(@post)  do |f| %>
   <% if @post.errors.any? %>
-    <div id="error_explanation" class = "alert alert-error">
+    <div id="error_explanation" class = "row-fluid span3 alert alert-error">
       <!-- <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2> -->
 
       <ul>
@@ -11,34 +11,40 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="container">  
+  <div class = "span1"></div>
+  <div class = "well span9">
   <div class = "row-fluid">
-  <span class="field span4">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <span class = "field span4">
+    <%= f.label :title %>
+    :<%= f.text_field :title %>
   </span>
-  <span class="field span4">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
+  <div class="field  input-prepend">
+    <%= f.label :price %></br><span class ="add-on">$</span>
+    $<%= f.number_field :price, :class => "span5 input-small", :id => "prependedInput" %>
+  </div>
+  <span class="field">
+    <%= f.label :category %></br>
+    <%= f.text_field :category, :class => "input-small"%>
   </span>
-  
-  <span class="field span4">
+  <span class="field">
     <%= f.label :location %><br />
     <%= f.text_field :location %>
   </span>
-</div>
+
 <div class = "row-fluid">
   <span class="field span12">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description%>
   </span>
-</div>
-
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.number_field :price %>
+  <div class = "field">
+	  <%= f.file_field :photo%>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+</div>
+</div>
+</div>
+

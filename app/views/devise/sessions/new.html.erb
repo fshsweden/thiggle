@@ -1,4 +1,5 @@
 </br>
+  <div class="container"> 
 <div class= "span1 pull-right"></div>
 <div class="well well-small span3  pull-right">
 <h4>Sign in</h4>
@@ -14,8 +15,9 @@
     
   <% end -%>
 
-  <div class = "rows"><%= f.submit "Sign in", :class => 'button-small purple_normal rounded3' %><div><%= f.check_box :remember_me %></div><div> <%=f.label :remember_me %></div></div>
+  <div class = "rows"><%= f.submit "SIGN IN", :class => 'button-small purple_normal rounded3' %><div><%= f.check_box :remember_me %></div><div> <%=f.label :remember_me %></div></div>
 <% end %>
 <%= render "devise/shared/links" %>
+</div>
 </div>
 
