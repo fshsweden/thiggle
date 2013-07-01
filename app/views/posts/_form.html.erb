@@ -1,50 +1,18 @@
+<div class = "span2"> </div>
+<div class= "container well">
+  <%= bootstrap_form_for(@post, html: { class: 'form-horizontal' }, help: :block) do |f| %>
+    <%= f.alert_message "You need to give us more information" %>
 
-<%= form_for(@post)  do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation" class = "row-fluid span3 alert alert-error">
-      <!-- <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2> -->
+    <%= f.text_field :title, label: 'Title' %>
+    <%= f.text_field :price, prepend: '$', label: 'Price', :class => "span1" %>
+    <%= f.text_field :category, label: 'Category' %>
+    <%= f.text_field :location, label: 'Location' %>
+    <%= f.file_field :photo%>
+    <%= f.text_area :description, label: 'Description', :rows => 8, :cols => 40 %>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+
+    <div class="actions">
+      <%= f.submit 'SUBMIT', :class => 'button-small blue_normal rounded3' %>
     </div>
   <% end %>
-  <div class="container">  
-  <div class = "span1"></div>
-  <div class = "well span9">
-  <div class = "row-fluid">
-  <span class = "field span4">
-    <%= f.label :title %>
-    :<%= f.text_field :title %>
-  </span>
-  <div class="field  input-prepend">
-    <%= f.label :price %></br><span class ="add-on">$</span>
-    $<%= f.number_field :price, :class => "span5 input-small", :id => "prependedInput" %>
-  </div>
-  <span class="field">
-    <%= f.label :category %></br>
-    <%= f.text_field :category, :class => "input-small"%>
-  </span>
-  <span class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </span>
-
-<div class = "row-fluid">
-  <span class="field span12">
-    <%= f.label :description %><br />
-    <%= f.text_area :description%>
-  </span>
-  <div class = "field">
-	  <%= f.file_field :photo%>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <% end %>
 </div>
-</div>
-</div>
-

@@ -52,3 +52,12 @@ gem 'bootstrap-sass'
 
 #haml
 gem 'haml-rails', '>= 0.3.4', :group => :development
+
+#image upload
+gem "paperclip", "~> 3.0"
+
+#form helper
+gem 'bootstrap_form'
+
+#pagination
+gem 'kaminari'

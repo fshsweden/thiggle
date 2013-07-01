@@ -1,11 +1,14 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-
+</br></br>
 
 <div class="container">
-  <h1><%= user + "'s Dashboard" %></h1>
-  <p>
-  
-  <br> 
+	<table class="table">
+  	<h1><%  "'s Dashboard" %></h1>
+	<% @conversations.each do |c| %>
+  <tr>
+    <td><%= c.subject %></td></br>
+    <td><%= c.last_sender.username %></td>
+<% end %>
+</table>
 
-  </div>
+<br />
+</div>
