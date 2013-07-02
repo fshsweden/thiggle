@@ -58,6 +58,7 @@ gem "paperclip", "~> 3.0"
 
 #form helper
 gem 'bootstrap_form'
+gem 'formtastic'
 
 #pagination
 gem 'kaminari'

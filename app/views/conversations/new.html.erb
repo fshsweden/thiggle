@@ -1,0 +1,16 @@
+<div class = "span2"> </div>
+<div class= "container">
+	<div class = "well">
+
+	<%= form_tag("/conversations", method: "get", :class => "form-horizontal") do %>
+	  <%= label_tag(:to, "To: ") %> 
+	  <%= text_field_tag(:to) %></br>
+	  <%= label_tag(:subject, "Subject:") %>
+	  <%= text_field_tag(:subject) %></br>
+	  <%= label_tag(:message, "Message") %>
+	  <%= text_area_tag(:message) %></br>
+	  <%= submit_tag("Search") %>
+	<% end %>
+</div>
+
+</div>

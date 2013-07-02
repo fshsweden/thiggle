@@ -58,6 +58,8 @@ GEM
       multi_json (~> 1.0)
     foreigner (1.4.2)
       activerecord (>= 3.0.0)
+    formtastic (2.2.1)
+      actionpack (>= 3.0)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -167,6 +169,7 @@ DEPENDENCIES
   bootstrap_form
   coffee-rails (~> 3.2.1)
   devise
+  formtastic
   haml-rails (>= 0.3.4)
   jquery-rails
   kaminari

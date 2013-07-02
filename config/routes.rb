@@ -8,6 +8,7 @@ Opus::Application.routes.draw do
   #sign out fix - >
   #devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
   resources :posts
+  resources :conversations
   resources :home do
     collection do
       get :index
@@ -66,6 +67,7 @@ Opus::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#index'
+  
 
   # See how all your routes lay out with "rake routes"
 
