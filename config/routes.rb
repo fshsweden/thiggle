@@ -8,7 +8,13 @@ Opus::Application.routes.draw do
   #sign out fix - >
   #devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
   resources :posts
-  resources :conversations
+  resources :conversations, only: [:index, :show, :new, :create] do
+      member do
+        post :reply
+        post :trash
+        post :untrash
+      end
+    end
   resources :home do
     collection do
       get :index

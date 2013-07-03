@@ -25,6 +25,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def sendit(user, subject, message)
+    self.send_message(user, subject, message)
+  end
+  
+    
   
 
 
