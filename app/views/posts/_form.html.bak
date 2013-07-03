@@ -1,0 +1,17 @@
+<div class = "span2"> </div>
+<div class= "container well">
+  <%= bootstrap_form_for(@post, url: :conversations, html: { class: 'form-horizontal' }, help: :block) do |f| %>
+
+    <%= f.text_field :title, label: 'Title' %>
+    <%= f.text_field :price, prepend: '$', label: 'Price', :class => "span1" %>
+    <%= f.text_field :category, label: 'Category' %>
+    <%= f.text_field :location, label: 'Location' %>
+    <%= f.file_field :photo%>
+    <%= f.text_area :description, label: 'Description', :rows => 8, :cols => 40 %>
+
+
+    <div class="actions">
+      <%= f.submit 'SUBMIT', :class => 'button-small blue_normal rounded3' %>
+    </div>
+  <% end %>
+</div>
