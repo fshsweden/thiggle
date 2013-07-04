@@ -10,6 +10,9 @@ class ConversationsController < ApplicationController
       send_message(recipients, *conversation_params(:body, :subject)).conversation
 
     redirect_to conversation
+    rescue ArgumentError
+      redirect_to dashboard_home_index_path
+    
   end
 
   def reply
