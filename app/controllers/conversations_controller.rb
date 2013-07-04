@@ -2,8 +2,11 @@ class ConversationsController < ApplicationController
   before_filter :authenticate_user!
   helper_method :mailbox, :conversation
 
+  
+  
   def create
     recipient_emails = conversation_params(:recipients).split(',')
+  
     recipients = User.where(username: recipient_emails).all
 
     conversation = current_user.
@@ -12,6 +15,9 @@ class ConversationsController < ApplicationController
     redirect_to conversation
     rescue ArgumentError
       redirect_to dashboard_home_index_path
+    rescue ActionController::ActionControllerError
+      redirect_to new_conversation_path
+      
     
   end
 

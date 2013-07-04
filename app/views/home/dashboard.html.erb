@@ -1,18 +1,23 @@
-</br></br>
 
 <div class="container">
 	<table class="table">
-  	<h1><%  "'s Dashboard" %></h1>
+		<h3>Dashboard <%= @number_unread_messages%></h3>
     <tr>
       <th>From</th>
       <th>Subject</th>
   </tr>
 	<% @conversations.each do |c| %>
-
-  <tr>
+	<% if c.is_unread?(current_user) %>
+  <tr class = "warning">
     <td><%= c.last_sender.username %></td>
-	<td><%= c.subject %></td></br>
+	<td><b><%= link_to c.subject, c%></b></td>
   </tr>
+  	<% end %>
+	<% if c.is_read?(current_user) %>  <tr>
+    <td><%= c.last_sender.username %></td>
+	<td><%= link_to c.subject, c%></td>
+  </tr>
+  <% end %>
 <% end %>
 </table>
 

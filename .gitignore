@@ -17,3 +17,5 @@
 /vendor/bundle
 
 /config/database.yml
+/public/system
+/solr/data/development/index/

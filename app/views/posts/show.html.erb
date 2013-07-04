@@ -39,6 +39,9 @@
   <b>Date:</b>
   <%= @post.created_at %>
 </p>
+<p>
+ <%= image_tag @post.photo.url(:thumbnail) %>
+</p>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

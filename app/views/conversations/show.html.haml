@@ -1,7 +1,16 @@
 %h1= conversation.subject
-%ul
-  = content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt|
-    - message = receipt.message
-    %h3= message.subject
-    %p= message.body
-= render 'messages/form', conversation: conversation
+- conversation.mark_as_read(current_user)
+.container
+  .well
+    = content_tag_for(:tr,conversation.receipts_for(current_user)) do |receipt|
+      - message = receipt.message
+      %h5= message.subject 
+      %p From: #{get_sender(message.sender_id)}
+      <hr>
+      %p= message.body
+      </br>
+      </br>
+    </br>
+    </br>
+    %h4 Reply
+    = render 'messages/form', conversation: conversation
