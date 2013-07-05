@@ -19,7 +19,7 @@
 		    <ul class="nav nav-pills pull-right">
 				  <% if user_signed_in? %>
 		          <li><%= link_to current_user.username, edit_user_registration_path, :class => 'pull-right' %></li>
-			    <li><%=current_user.mailbox.receipts.where(is_read:false).count%></li>
+			    <li><%=current_user.mailbox.inbox(unread: true).count%></li>
 		          <li><%= link_to "Sign Out", destroy_user_session_path %></li>
 		          <% if current_user.admin? %>
 		            <li><%= link_to "Admin", dashboard_home_index_path %></li>

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts2 = Post.order('created_at DESC').page params[:page]
     query_string = params[:q]  
     @search = Post.search do
       keywords(query_string)
@@ -92,7 +92,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
     @post.destroy
 
     respond_to do |format|

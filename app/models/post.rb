@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   has_attached_file :photo, {
             :styles => { :large => "700x400#", :medium=>"490x368#", :thumbnail=>"75x75#" }}
   
+  paginates_per 2
 
   searchable do
     text :title, :description
