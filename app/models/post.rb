@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user  
   has_one :user
   has_attached_file :photo, {
-            :styles => { :large => "700x400#", :medium=>"490x368#", :thumbnail=>"75x75#" }}
+            :styles => { :large => "700x400#", :medium=>"500x500#", :thumbnail=>"225x168#" }}
   
   paginates_per 2
 

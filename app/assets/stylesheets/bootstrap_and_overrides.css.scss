@@ -27,6 +27,27 @@ z-index: 100;
 }
 .navbar-inner .container {width:704px;}
 
+.nomargin{ margin: 0px;}
+
+.listing-title{
+	padding-left: 10px;
+	width: 240px;
+}
+
+.listing{
+	vertical-align: top;
+}
+
+.price{
+	font-size: 16px;
+	text-align: right;
+	width: 135px;
+}
+
+.marginbottom{
+	margin-bottom: -1px;
+}
+
 .navbar .brand{
 	color: #fff;
 	text-shadow: 0 0 0 ;

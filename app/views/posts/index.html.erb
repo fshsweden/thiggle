@@ -1,41 +1,30 @@
+<container>
 <h1>Listing posts</h1>
 
+<div class = "container">
+	<% if params.has_key?(:q) %>
+	<b><%= @posts.count%></b> results for <%= params[:q] %></div> 
+	<% end %>
 <table>
-  <tr>
-    <th>Post</th>
-    <th>User</th>
-    <th>Title</th>
-    <th>Category</th>
-    <th>Description</th>
-    <th>Location</th>
-    <th>Price</th>
-    <th>Date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+</container>
 
-<% @posts2.each do |post| %>
-  <div class = "well"
-  <tr>
-    <td><%= post.id %></td>
-    <td><%= post.user_id %></td>
-    <td><%= post.title %></td>
-    <td><%= post.category %></td>
-    <td><%= post.description %></td>
-    <td><%= post.location %></td>
-    <td><%= post.price %></td>
-    <td><%= post.created_at %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post), :class =>'btn btn-mini' %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
-  </tr>
-</div>
+
+<% @posts.each do |post| %>
+
+  <tr class = "well well-small offset1 span8 marginbottom listing">
+	  <ul class = "thumbnails">
+    <td> <li class = "nomargin"><div class = 'thumbnail'><%= image_tag post.photo.url(:thumbnail) %></div></li></td>
+    <td class= 'listing-title'><%= link_to post.title, post %></td>
+</ul>
+    <td class = "price"><b>$<%= post.price %></b></td>
+<div class = "container"></div>
 <% end %>
+
 </table>
+</container>
 
-<br />
 
-<%= paginate @posts2 %>
+<%= paginate @posts %>
 
 <%= link_to 'New Post', new_post_path %>
+

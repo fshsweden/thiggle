@@ -2,10 +2,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts2 = Post.order('created_at DESC').page params[:page]
+    #@posts2 = Post.order('created_at DESC').page params[:page]
     query_string = params[:q]  
     @search = Post.search do
       keywords(query_string)
+      paginate :page => params[:page], :per_page => 20
     end
     @posts = @search.results
 
@@ -74,7 +75,7 @@ class PostsController < ApplicationController
     
     query_string = params[:q]    
 
-    @search = Posting.search do
+    @search = Post.search do
       keywords(query_string)
     end
 
