@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701161450) do
+ActiveRecord::Schema.define(:version => 20130707015132) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -64,12 +64,28 @@ ActiveRecord::Schema.define(:version => 20130701161450) do
     t.text     "description"
     t.string   "location"
     t.integer  "price"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "photo2_file_name"
+    t.string   "photo2_content_type"
+    t.integer  "photo2_file_size"
+    t.datetime "photo2_updated_at"
+    t.string   "photo3_file_name"
+    t.string   "photo3_content_type"
+    t.integer  "photo3_file_size"
+    t.datetime "photo3_updated_at"
+    t.string   "photo4_file_name"
+    t.string   "photo4_content_type"
+    t.integer  "photo4_file_size"
+    t.datetime "photo4_updated_at"
+    t.string   "photo5_file_name"
+    t.string   "photo5_content_type"
+    t.integer  "photo5_file_size"
+    t.datetime "photo5_updated_at"
   end
 
   create_table "receipts", :force => true do |t|
@@ -85,6 +101,20 @@ ActiveRecord::Schema.define(:version => 20130701161450) do
   end
 
   add_index "receipts", ["notification_id"], :name => "index_receipts_on_notification_id"
+
+  create_table "uploads", :force => true do |t|
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "post_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
