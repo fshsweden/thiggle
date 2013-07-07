@@ -21,6 +21,8 @@ Opus::Application.routes.draw do
       get :dashboard
     end
   end
+  
+  resources :uploads
 
 
   # The priority is based upon order of creation:

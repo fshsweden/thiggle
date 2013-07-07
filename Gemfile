@@ -40,6 +40,9 @@ gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in developm
 # To use debugger
 # gem 'debugger'
 
+#file uploader
+gem "jquery-fileupload-rails"
+
 #User Authentication
 gem 'devise'
 
