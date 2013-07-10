@@ -25,6 +25,7 @@ class UploadController < ApplicationController
   # GET /uploads/new.json
   def new
     @upload = Upload.new
+    @upload.post_id = 10
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +42,7 @@ class UploadController < ApplicationController
   # POST /uploads.json
   def create
     @upload = Upload.new(params[:upload])
+    @upload.post_id = 10
 
     respond_to do |format|
       if @upload.save

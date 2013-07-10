@@ -1,3 +1,4 @@
+Rails.application.config.middleware.use JQuery::FileUpload::Rails::Middleware
 module ActionView::Helpers::FormTagHelper
 private
 
