@@ -4,6 +4,9 @@ class Post < ActiveRecord::Base
   has_many :uploads
   has_attached_file :photo, { :styles => { :medium => "500x500#", :thumbnail => "225x168#"}}
   has_attached_file :photo2, { :styles => { :small => "50x50#"} }
+  has_attached_file :photo3, { :styles => { :small => "50x50#"} }
+  has_attached_file :photo4, { :styles => { :small => "50x50#"} }
+  has_attached_file :photo5, { :styles => { :small => "50x50#"} }
 
   paginates_per 2
 

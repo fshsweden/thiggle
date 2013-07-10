@@ -6,6 +6,7 @@
       - message = receipt.message
       %h5= message.subject 
       %p From: #{get_sender(message.sender_id)}
+      %p Sent: #{message.created_at}
       <hr>
       %p= message.body
       </br>

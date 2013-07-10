@@ -137,4 +137,8 @@ ActiveRecord::Schema.define(:version => 20130710014031) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
+  add_foreign_key "notifications", "conversations", :name => "notifications_on_conversation_id"
+
+  add_foreign_key "receipts", "notifications", :name => "receipts_on_notification_id"
+
 end
