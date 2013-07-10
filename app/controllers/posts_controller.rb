@@ -6,9 +6,9 @@ class PostsController < ApplicationController
     query_string = params[:q]  
     @search = Post.search do
       keywords(query_string)
-      paginate :page => params[:page], :per_page => 20
     end
     @posts = @search.results
+    #@post = Post.order(:create_at).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'post was successfully created.' }
+        format.html { redirect_to new_upload_url}
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
