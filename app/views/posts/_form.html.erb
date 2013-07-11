@@ -5,9 +5,11 @@
 
     <%= f.text_field :title, label: 'Title' %>
     <%= f.text_field :price, prepend: '$', label: 'Price', :class => "span1" %>
-    <%= f.text_field :category, label: 'Category' %>
-    <%= f.text_field :location, label: 'Location' %>
-    <%= f.text_area :description, label: 'Description', :rows => 8, :cols => 40 %>
+   
+    <%= f.select :location, ["city of chicago", "north chicago", "south chicago", "west chicago", "northwest suburbs", "northwest indiana" ] %>
+    <%= f.select :category, ["Antiques", "Art", "Baby", "Auto Parts", "Books", "Bicycles", "Boats", "Automobiles", "Cell Phones", "Clothing & Accesories", "Collectibles", "Computers", "Electronics", "Furniture", "Garage & Estate Sales", "Health and Beauty", "Jewelery", "Musical Instruments", "Sporting Goods", "Tickets", "Tools", "Toys and Games" ] %>
+    <%= f.text_area :description, label: 'Description', :rows => 8, :cols => 40 %> 
+    <p id="count">
     <%= f.file_field :photo %>
     <%= f.file_field :photo2 %>
     <%= f.file_field :photo3 %>
@@ -18,4 +20,25 @@
     </div>
     </div>
   <% end %>
+
+
  
+<script>
+maxCharacters = 160;
+
+$('#count').text(maxCharacters);
+
+$('textarea').bind('keyup keydown', function() {
+    var count = $('#count');
+    var characters = $(this).val().length;
+
+    if (characters > maxCharacters) {
+        count.addClass('over');
+    } else {
+        count.removeClass('over');
+    }
+
+    count.text(maxCharacters - characters);
+});
+
+</script>
