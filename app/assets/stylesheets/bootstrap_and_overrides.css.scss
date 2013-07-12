@@ -18,9 +18,27 @@ text-align: right;
 z-index: 100;
 }
 
+ul, ol {
+padding: 0;
+margin: 0 0 10px 25px;
+}
+
+ul, menu, dir {
+display: block;
+list-style-type: disc;
+//-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+
+.navbar.logo-font{
+    font-family: 'Grand Hotel', cursive;
+}
 .navbar-inner {
 
-	background-color: #5B5EA6; /* background color will be black for all browsers */
+	background-color: #2d2d2d; /* background color will be black for all browsers */
     background-image: none;
     background-repeat: no-repeat;
     filter: none;
@@ -39,6 +57,7 @@ z-index: 100;
 	vertical-align: top;
 }
 
+
 .price{
 	font-size: 16px;
 	text-align: right;
@@ -56,8 +75,19 @@ z-index: 100;
 		color: #FFFFFF;
 	}
 	text-align:center;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Grand Hotel', cursive;
+    font-size: 30px;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
 
+}
+
+.searchbox{}
+
+.navbar .brand:hover{
+    opacity: .6;
 }
 
 .navbar .nav .test{
@@ -75,10 +105,10 @@ z-index: 100;
 
 .navbar .nav > li > a {
 	text-shadow: 0 0 0 ;
-	color: #000;
+	color: #bbb;
 	font-size: 13px;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-//	font-weight: bold;
+	//font-weight: bold;
 	padding: 5px 5px 4px;
 	margin-bottom: 0px;
 	margin-left: 0px;
@@ -101,17 +131,9 @@ text-decoration: none;
 }
 
 
-h1{
-	text-align:center;
-}
-ul{
-	width:auto;
-}
-li{
-	list-style:none;
-	float:left;
-	margin:10px;
-}
+
+
+
 .button-small{
     color: #fff !important;
     word-spacing: 0.25em;
@@ -231,32 +253,6 @@ li{
 
 label, .controls { display: inline-block; }
 
-#magnifying-glass
-{
- font-size: 10em; /* This controls the size. */
- display: inline-block;
- width: 0.4em;
- height: 0.4em;
- border: 0.1em solid red;
- position: relative;
- border-radius: 0.35em;
-}
-#magnifying-glass::before
-{
- content: "";
- display: inline-block;
- position: absolute;
- right: -0.25em;
- bottom: -0.1em;
- border-width: 0;
- background: red;
- width: 0.35em;
- height: 0.08em;
- -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-     -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-}
 
 .title-input {
 	 width: 1000px;

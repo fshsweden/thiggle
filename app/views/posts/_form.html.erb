@@ -9,7 +9,7 @@
     <%= f.select :location, ["city of chicago", "north chicago", "south chicago", "west chicago", "northwest suburbs", "northwest indiana" ] %>
     <%= f.select :category, ["Antiques", "Art", "Baby", "Auto Parts", "Books", "Bicycles", "Boats", "Automobiles", "Cell Phones", "Clothing & Accesories", "Collectibles", "Computers", "Electronics", "Furniture", "Garage & Estate Sales", "Health and Beauty", "Jewelery", "Musical Instruments", "Sporting Goods", "Tickets", "Tools", "Toys and Games" ] %>
     <%= f.text_area :description, label: 'Description', :rows => 8, :cols => 40 %> 
-    <p id="count">
+    <p class= "pull-right offset5" id="count">
     <%= f.file_field :photo %>
     <%= f.file_field :photo2 %>
     <%= f.file_field :photo3 %>

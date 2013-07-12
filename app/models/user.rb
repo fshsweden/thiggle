@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :posts
   validates_presence_of :username
   validates_uniqueness_of :username
+  validates_format_of :username, :with => /^[A-Za-z\d_]+$/
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
