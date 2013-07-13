@@ -69,13 +69,15 @@ list-style-type: disc;
 }
 
 .navbar .brand{
-	color: #fff;
+	color: #009874;
 	text-shadow: 0 0 0 ;
 	&:hover, {
-		color: #FFFFFF;
+		color: #009874;
+		text-shadow: 0 0 0 ;
 	}
 	text-align:center;
 	font-family: 'Grand Hotel', cursive;
+	
     font-size: 30px;
     -webkit-transition: opacity 0.2s ease;
     -moz-transition: opacity 0.2s ease;

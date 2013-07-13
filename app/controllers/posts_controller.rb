@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     #@posts2 = Post.order('created_at DESC').page params[:page]
-    query_string = params[:q]  
+    query_string = params[:q]
+    category = params[:cat]  
     @search = Post.search do
       keywords(query_string)
     end
