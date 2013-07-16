@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Opus::Application.load_tasks
+Thiggle::Application.load_tasks

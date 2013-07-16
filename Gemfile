@@ -66,3 +66,5 @@ gem 'simple_form'
 
 #pagination
 gem 'kaminari'
+
+gem 'rename'

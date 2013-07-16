@@ -1,4 +1,4 @@
-Opus::Application.routes.draw do
+Thiggle::Application.routes.draw do
   devise_for :admins
 
   get "home/index"
