@@ -29,18 +29,17 @@
 		</div> 
 	<%# @post = @search.results%>
 		<% end %>
-		<table class = "post">
+		<table class = "post" style="table-layout: fixed; width: 570px">
 
 
 			<% @posts.each do |post| %>
 
-  			<tr class = "well well-small offset1 marginbottom listing listing-title" width= "250px">
+  			<tr class = "well well-small marginbottom listing">
 	  			<ul class = "thumbnails">
     			<td> <div class = 'thumbnail post'><%= image_tag post.photo.url(:thumbnail) %></div></td>
-    			<td class= 'listing-title' width= "250px"><div class= "post"><%= link_to post.title, post , :class => "post-title"%></div>
-			</br>
-			ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-			sssssssssssssssssssssssssssssssss
+    			<td class= 'listing-title' style="word-wrap: break-word"><div class= "post"><%= link_to post.title, post , :class => "post-title"%></div>
+			
+			<%= post.description %><p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 			<td class = "price"><b>$<%= post.price %></b></td></td>
 				</ul>
     			

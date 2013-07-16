@@ -24,6 +24,10 @@ Thiggle::Application.routes.draw do
   
   resources :uploads
 
+  get 'tags/:tag', to: 'post#index', as: :tag
+  resources :posts
+  root to: 'posts#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
