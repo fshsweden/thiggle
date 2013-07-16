@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
+  
   def index
     #@posts2 = Post.order('created_at DESC').page params[:page]
     query_string = params[:q]
-    category = params[:cat]  
+    category = params[:cat]
+    
     @search = Post.search do
       keywords(query_string)
     end
@@ -17,7 +19,9 @@ class PostsController < ApplicationController
     end
     
   end
-
+  
+    
+    
   # GET /posts/1
   # GET /posts/1.json
   def show

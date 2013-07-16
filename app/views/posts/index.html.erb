@@ -1,39 +1,21 @@
 <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <div class="well sidebar-nav">
+          <div class="well sidebar-nav-fixed ">
             <ul class="nav nav-list">
-		  <li class="nav-header">Search by</li>
-		  <li><a href="/jobs?cat=art">Title</a></li>
-		  <li><a href="/jobs?cat=art">Description</a></li>
-		  <li class="nav-header">Real Estate</li>
-		  <li><a href="/posts?cat=baby">Houses</a></li>
-		  <li><a href="/posts?cat=baby">Apartments</a></li>
-		  <li class="nav-header">Categories</li>
-		  <li><a href="/posts?cat=art">Art</a></li>
-		  <li><a href="/posts?cat=baby">Baby</a></li>
 
-              <li><a href="/posts?cat=antiques">Antiques</a></li>
-              <li><a href="/posts?cat=art">Art</a></li>
-              <li><a href="/posts?cat=baby">Baby</a></li>
-              <li><a href="/posts?cat=auto">Auto Parts</a></li>
-              <li><a href="/posts?cat=books">Books</a></li>
-              <li><a href="/posts?cat=bike">Bicycles</a></li>
-              <li><a href="/posts?cat=boat">Boats</a></li>
-              <li><a href="/posts?cat=cellphone">Cellphones</a></li>
-		  <li><a href="/posts?cat=clothes">Clothing & Accesories</a></li>
-		  <li><a href="/posts?cat=collectibles">Collectibles</a></li>
-		  <li><a href="/posts?cat=computers">Computers</a></li>
-		  <li><a href="/posts?cat=electronics">Electronics</a></li>
-		  <li><a href="/posts?cat=furniture">Furniture</a></li>
-		  <li><a href="/posts?cat=garage-sales">Garage and Estate Sales</a></li>
-		  <li><a href="/posts?cat=health">Health and Beauty</a></li>
-		  <li><a href="/posts?cat=jewelery">Jewelery</a></li>
-		  <li><a href="/posts?cat=music">Musical Instruments</a></li>
-		  <li><a href="/posts?cat=sporting">Sporting Goods</a></li>
-		  <li><a href="/posts?cat=tickets">Tickets</a></li>
-		  <li><a href="/posts?cat=tools">Tools</a></li>
-		  <li><a href="/posts?cat=toys">Toys and Games</a></li>
+	  	
+		  <li class="nav-header">Search by Price</li>
+		  <form name="sidenav-search" action="/posts" method="get" class= "form-inline">
+			  $ <input type="text" class="span3" placeholder ="0" id = "min" name = "min"> to $
+			  <input type="text" class="span3" id= "max" name = "max">
+		  </br></br><input type="submit" class= "btn span5" value="Update"/>
+			  
+				  
+			
+		  </form>
+
+
             </ul>
 		
           </div><!--/.well -->
@@ -47,19 +29,23 @@
 		</div> 
 	<%# @post = @search.results%>
 		<% end %>
-		<table>
+		<table class = "post">
 
 
 			<% @posts.each do |post| %>
 
-  			<tr class = "well well-small offset1 span8 marginbottom listing">
+  			<tr class = "well well-small offset1 marginbottom listing listing-title" width= "250px">
 	  			<ul class = "thumbnails">
-    			<td> <li class = "nomargin"><div class = 'thumbnail'><%= image_tag post.photo.url(:thumbnail) %></div></li></td>
-    			<td class= 'listing-title'><%= link_to post.title, post %></td>
+    			<td> <div class = 'thumbnail post'><%= image_tag post.photo.url(:thumbnail) %></div></td>
+    			<td class= 'listing-title' width= "250px"><div class= "post"><%= link_to post.title, post , :class => "post-title"%></div>
+			</br>
+			ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+			sssssssssssssssssssssssssssssssss
+			<td class = "price"><b>$<%= post.price %></b></td></td>
 				</ul>
-    			<td class = "price"><b>$<%= post.price %></b></td>
+    			
 				<% end %>
-
+				
 			</table>
 		
 

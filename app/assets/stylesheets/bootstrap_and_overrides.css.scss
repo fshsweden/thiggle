@@ -9,6 +9,34 @@
     color: red;
 }
 
+
+.post {
+	width: 150px;
+}
+
+.post-title {
+	font-weight: bold;
+	color: #333;
+	font-size: 16px;
+	&:hover,{
+		color: #009999;
+	};
+}
+
+
+.sidebar-nav-fixed {
+    padding: 9px 0;
+    position:fixed;
+    left:20px;
+    top:60px;
+    width:200px;
+}
+
+.row-fluid > .span-fixed-sidebar {
+    margin-left: 290px;
+    min-height: 20px;
+}
+
 #header {
 background-color: #83c441;
 height: 70px;
@@ -53,6 +81,8 @@ list-style-type: disc;
 	width: 240px;
 }
 
+
+
 .listing{
 	vertical-align: top;
 }
@@ -69,16 +99,16 @@ list-style-type: disc;
 }
 
 .navbar .brand{
-	color: #009874;
+	color: #fff;
 	text-shadow: 0 0 0 ;
 	&:hover, {
-		color: #009874;
+		color: #fff;
 		text-shadow: 0 0 0 ;
 	}
 	text-align:center;
 	font-family: 'Grand Hotel', cursive;
 	
-    font-size: 30px;
+    font-size: 28px;
     -webkit-transition: opacity 0.2s ease;
     -moz-transition: opacity 0.2s ease;
     -o-transition: opacity 0.2s ease;
