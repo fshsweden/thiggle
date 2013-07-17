@@ -1,8 +1,16 @@
 class Post < ActiveRecord::Base
   belongs_to :user  
   has_one :user
-  has_many :comments
-  has_attached_file :photo, { :styles => { :medium => "500x500#", :thumbnail => "225x168#"}}
+  has_many :comments, :dependent => :destroy
+  has_attached_file :photo, { 
+    :styles => { 
+      :medium => "400x400^", 
+      :thumbnail => "225x168#"
+      },
+    :convert_options => {
+      :thumb => "-quality 75 -strip -gravity center"
+    }
+    }
   has_attached_file :photo2, { :styles => { :small => "50x50#"} }
   has_attached_file :photo3, { :styles => { :small => "50x50#"} }
   has_attached_file :photo4, { :styles => { :small => "50x50#"} }

@@ -22,11 +22,11 @@ Thiggle::Application.routes.draw do
     end
   end
   
-  resources :uploads
+  resources :comments
 
   get 'tags/:tag', to: 'post#index', as: :tag
   resources :posts
-  root to: 'posts#index'
+
 
 
   # The priority is based upon order of creation:

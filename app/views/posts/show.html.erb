@@ -1,48 +1,21 @@
 <div class = 'container'>
 <p id="notice"><%= notice %></p>
+<container>
+<table>
+  <tr>
+    <td><%= image_tag @post.photo.url(:medium)%></td>
+    <td><div class= "pull-right"> $ <%= @post.price %></div>
+      <p><b><%=@post.title%></b></p>
+      <p>posted by <%=@post_user.username%> at <%= @post.created_at %></p>
+      <p><%= @post.location %> > <%= @post.category %> </p>
+      <p>Description <%= @post.description %></p>
 
-<p>
-  <b>Post:</b>
-  <%= @post.id %>
-</p>
+    </td>
+  </tr>
+</table>
+</container>
 
-<p>
-  <b>User:</b>
-  <%= @post.user_id %>
-</p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @post.category %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @post.description %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @post.location %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @post.price %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @post.created_at %>
-</p>
-<p>
-
-</p>
 
 </div>
 
