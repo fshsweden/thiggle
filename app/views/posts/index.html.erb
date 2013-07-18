@@ -57,6 +57,12 @@ $(".my-link").click(function(){
 	<%= f.text_field :text, :placeholder => "Reply to ..." %>
 	<%= f.hidden_field :post_id, :value => post.id %>
 <%end %>
+
+				<% post.comments.each do |comment| %>
+				<b><%= comment.user_name %></b> wrote 
+				<p><%= comment.text %></p>
+
+				<%end %>
     			</div>
 
 			<td class = "price"><b>$<%= post.price %></b></td></td>

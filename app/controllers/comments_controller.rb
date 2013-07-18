@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     @comment.user_id = current_user.id
+    @comment.user_name = current_user.username
     
     respond_to do |format|
       if @comment.save

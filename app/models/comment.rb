@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   belongs_to :user
   
-  attr_accessible :post_id, :text, :user_id
+  attr_accessible :post_id, :text, :user_id, :user_name
 
 
 end
