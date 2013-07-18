@@ -1,3 +1,20 @@
+<script>
+var counter = 1;
+var numBoxes = 4;
+function toggle4(showHideDiv) {
+       var ele = document.getElementById(showHideDiv + counter);
+       if(ele.style.display == "block") {
+              ele.style.display = "none";
+       }
+       else {
+              ele.style.display = "block";
+       }
+       if(counter == numBoxes) {
+                document.getElementById("toggleButton").style.display = "none";
+       }
+}
+</script>
+
 <div class = "span2"> </div>
 <div class= "container well">
   <%= bootstrap_form_for(@post, html: { class: 'form-horizontal' }, help: :block) do |f| %>
@@ -8,11 +25,16 @@
    
     <%= f.select :location, ["city of chicago", "north chicago", "south chicago", "west chicago", "northwest suburbs", "northwest indiana" ] %>
     <%= f.select :category, ["Antiques", "Art", "Baby", "Auto Parts", "Books", "Bicycles", "Boats", "Automobiles", "Cell Phones", "Clothing & Accesories", "Collectibles", "Computers", "Electronics", "Furniture", "Garage & Estate Sales", "Health and Beauty", "Jewelery", "Musical Instruments", "Sporting Goods", "Tickets", "Tools", "Toys and Games" ] %>
-    <%= f.text_area :description, label: 'Description', :rows => 8, :cols => 40 %> <p class= "offset7" id="count">Characters left
+    <%= f.text_area :description, label: 'Description', :rows => 8, :cols => 40 %> <p class= "offset7" id="count">
+
+    <em id="count">/em> 
+
+
     <%= f.file_field :photo %>
-    <%= f.file_field :photo2 %>
-    <%= f.file_field :photo3 %>
-    <%= f.file_field :photo4 %>
+    <div><input id="toggleButton" type="button" value="Add Additional Photos..." onclick="counter++; toggle4('photo');" class = "pull-right"></div>
+    <div id = "photo2" style = "display: none;"><%= f.file_field :photo2 %></div>
+    <div id = "photo3" style = "display: none;"><%= f.file_field :photo3 %></div>
+    <div id = "photo4" style = "display: none;"><%= f.file_field :photo4 %></div>
     <%= f.label :tag_list, "Tags (separated by commas)"%>
     <%= f.text_field :tag_list %>
 
@@ -41,10 +63,6 @@ $('textarea').bind('keyup keydown', function() {
 
     count.text(maxCharacters - characters);
 });
-
-function checkCharacters(){
-    var = submitbtn = document.getElementsByName("submit")[0]
-}
 
 
 </script>
