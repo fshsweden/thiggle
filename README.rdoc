@@ -1,4 +1,6 @@
-todo for thiggle
+=todo for thiggle
 
-user reputation
+user reputation added on post
 hide reply div
+validate attachment type before upload
+figure out good file limit size
