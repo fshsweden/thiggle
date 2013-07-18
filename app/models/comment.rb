@@ -2,8 +2,8 @@ class Comment < ActiveRecord::Base
   attr_accessible :text
   belongs_to :post
   belongs_to :user
+  
+  attr_accessible :post_id, :text, :user_id
 
-  validates_length_of :text, :minimum => 5, :maximum => 160
-  validates :text, :presence => true
 
 end

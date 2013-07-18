@@ -41,10 +41,9 @@
     			<td class= 'listing-title' style="word-wrap: break-word"><div class= "post"><%= link_to post.title, post , :class => "post-title"%></div>
 			
 			<%= post.description %><p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p><div id = "reply">
-    				<%= form_for :comment, :controller => "comment", :url => url_for(:controller => 'comments', :action => 'create') do |f| %>
+    				<%= form_for :comment, :controller => "comments_controller", :url => url_for(:controller => 'comments', :action => 'create') do |f| %>
 	<%= f.text_field :text, :placeholder => "Reply to ..." %>
 	<%= f.hidden_field :post_id, :value => post.id %>
-	<%= f.hidden_field :user_id, :value => current_user.id %>
 <%end %>
     			</div>
 			<td class = "price"><b>$<%= post.price %></b></td></td>
