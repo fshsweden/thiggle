@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to Post.find(@comment.post_id)}
+        format.html { redirect_to posts_url}
         #format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render controller: "posts", action: "index" }

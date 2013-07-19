@@ -70,6 +70,4 @@ gem 'kaminari'
 
 gem 'rename'
 
-gem "jquery-fileupload-rails"
-
 gem 'acts-as-taggable-on'

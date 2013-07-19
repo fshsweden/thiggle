@@ -1,91 +1,125 @@
 
-<script type="text/javascript">
-<!--
-$(".my-link").click(function(){
-    $(this).closest("div").next("reply").toggle();
-});
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.1.js"></script>
 
-//-->
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+$(".my-link").click(function(){
+    $(this).closest("div").next(".class2").toggle();
+});
+});//]]>  
+
 </script>
+
+
+
+<div class="container">
+<div class="class1">
+<a href="#" class="my-link">some link text 1</a>
+</div>
+<div class="class2">
+some content 1
+</div>
+</div>
+
+<div class="container">
+<div class="class1">
+<a href="#" class="my-link">some link text 2</a>
+</div>
+<div class="class2">
+some content 2
+</div>
+</div>
+
+
 <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav-fixed ">
-            <ul class="nav nav-list">
+	<div class="row-fluid">
+		<div class="span3">
+			<div class="well sidebar-nav-fixed ">
+				<ul class="nav nav-list">
 
 	  	
-		  <li class="nav-header">Search by Price</li>
-		  <form name="sidenav-search" action="/posts" method="get" class= "form-inline">
-			  $ <input type="text" class="span3" placeholder ="0" id = "min" name = "min"> to $
-			  <input type="text" class="span3" id= "max" name = "max">
-		  </br></br><input type="submit" class= "btn span5" value="Update"/>
+					<li class="nav-header">Search by Price</li>
+					<form name="sidenav-search" action="/posts" method="get" class= "form-inline">
+						$ <input type="text" class="span3" placeholder ="0" id = "min" name = "min"> to $
+						<input type="text" class="span3" id= "max" name = "max">
+					</br></br><input type="submit" class= "btn span5" value="Update"/>
 			  
 				  
 			
-		  </form>
+				</form>
 
 
-            </ul>
+			</ul>
 		
-          </div><!--/.well -->
-        </div><!--/span-->
-	  <div class = "span9">
+		</div><!--/.well -->
+	</div><!--/span-->
+	<div class = "span9">
 		<h1>Listing posts</h1>
 
 		<div class = "container">
 			<% if params.has_key?(:q) %>
 			<b><%= @posts.count%></b> results for <%= params[:q] %>
 		</div> 
-	<%# @post = @search.results%>
+		<%# @post = @search.results%>
 		<% end %>
 		
-<table class = "post" style="table-layout: fixed; width: 570px">
+		<table class = "post" style="table-layout: fixed; width: 570px">
 
 			<% @posts.each do |post| %>
 
 
-  			<tr class = "well well-small marginbottom listing">
-	  			<ul class = "thumbnails">
-    			<td> <div class = 'thumbnail post'><%= image_tag post.photo.url(:thumbnail) %></div></td>
-    			<td class= 'listing-title' style="word-wrap: break-word"><div class= "post"><%= link_to post.title, post , :class => "post-title"%></div>
+			<tr class = "well well-small marginbottom listing">
+				<ul class = "thumbnails">
+					<td> <div class = 'thumbnail post'><%= image_tag post.photo.url(:thumbnail) %></div></td>
+					<td class= 'listing-title' style="word-wrap: break-word"><div class= "post"><%= link_to post.title, post , :class => "post-title"%></div>
 			
-			<%= post.description %><p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+						<%= post.description %><p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 
-			<a href="#" class= "my-link" onclick="$(this).closest("div").next("reply").toggle();">some link text 2</a>
-			<div id = "reply">
-    				<%= form_for :comment, :controller => "comments_controller", :url => url_for(:controller => 'comments', :action => 'create') do |f| %>
-	<%= f.text_field :text, :placeholder => "Reply to ..." %>
-	<%= f.hidden_field :post_id, :value => post.id %>
-<%end %>
+						<div id = "reply">
+							<div class="container">
+							<div class="class1">
+							<a href="#" class="my-link">Reply</a>
+							</div>
+							<div class="class2" style = "display:none">
+								<%= form_for :comment, :controller => "comments_controller", :url => url_for(:controller => 'comments', :action => 'create') do |f| %>
+								<%= f.text_field :text, :placeholder => "Reply to ..." %>
+								<%= f.hidden_field :post_id, :value => post.id %>
+								<%end %>
 
-				<% post.comments.each do |comment| %>
-				<b><%= comment.user_name %></b> wrote 
-				<p><%= comment.text %></p>
+								<% post.comments.each do |comment| %>
+								<b><%= comment.user_name %></b> wrote 
+								<p><%= comment.text %></p>
 
-				<%end %>
-    			</div>
+								<%end %>
+							
+							</div>
+							</div>
+							
+							
+						
+						</div>
 
-			<td class = "price"><b>$<%= post.price %></b></td></td>
+						<td class = "price"><b>$<%= post.price %></b></td></td>
 				
-				</ul>
+					</ul>
 
-    			</tr>
+				</tr>
     			
 				<% end %>
 				
 			</table>
 		
 
+		</div>
 	</div>
-</div>
 
 
 
 
 
 
-<%= paginate @posts %>
+	<%= paginate @posts %>
 
-<%= link_to 'New Post', new_post_path %>
+	<%= link_to 'New Post', new_post_path %>
 </div>
 
