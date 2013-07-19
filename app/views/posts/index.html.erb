@@ -12,25 +12,6 @@ $(".my-link").click(function(){
 
 
 
-<div class="container">
-<div class="class1">
-<a href="#" class="my-link">some link text 1</a>
-</div>
-<div class="class2">
-some content 1
-</div>
-</div>
-
-<div class="container">
-<div class="class1">
-<a href="#" class="my-link">some link text 2</a>
-</div>
-<div class="class2">
-some content 2
-</div>
-</div>
-
-
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span3">
@@ -54,7 +35,9 @@ some content 2
 		</div><!--/.well -->
 	</div><!--/span-->
 	<div class = "span9">
-		<h1>Listing posts</h1>
+		<% if flash[:notice] %>
+		    <div class="notice"><%= flash[:notice] %></div>
+		  <% end %>
 
 		<div class = "container">
 			<% if params.has_key?(:q) %>
@@ -82,7 +65,7 @@ some content 2
 							</div>
 							<div class="class2" style = "display:none">
 								<%= form_for :comment, :controller => "comments_controller", :url => url_for(:controller => 'comments', :action => 'create') do |f| %>
-								<%= f.text_field :text, :placeholder => "Reply to ..." %>
+								<%= f.text_field :text %>
 								<%= f.hidden_field :post_id, :value => post.id %>
 								<%end %>
 

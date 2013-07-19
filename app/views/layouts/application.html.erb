@@ -25,13 +25,13 @@
 	  <div class="navbar-inner">  
 	    <div class="container">  
 			<%= link_to "Thiggle", root_path, :class => "brand logo-font"%>
-	        <ul class="nav nav-pills pull-left">
+	        <ul class="nav nav-pills pull-left" style="margin-top:10px">
 	       	   	<li><%= link_to "Explore", posts_path %></li>
 			</ul>
-		    <ul class="nav nav-pills pull-right">
+		    <ul class="nav nav-pills pull-right" style="margin-top:10px">
 				  <% if user_signed_in? %>
 		          <li class="top-nav-pills"><%= link_to current_user.username, edit_user_registration_path, :class => 'pull-right' %></li>
-			    <li><a href=""><i class=" icon-pencil icon-2x"></i>About Us</a></li>
+			    
 
 			    
 		          <li><%= link_to "Sign Out", destroy_user_session_path %></li>
@@ -45,8 +45,8 @@
 			      <li><%= link_to "Sign In", new_user_session_path, :class =>'button-small purple_light rounded3 pull-right' %></li>
 	            <% end %>
 
-				<li class = "nomargin"><form class = "inline-form">
-				<div class="input-append row-fluid">
+				
+			
 
           </li>
           </form>

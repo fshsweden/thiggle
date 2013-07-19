@@ -20,6 +20,8 @@ class PostsController < ApplicationController
     
   end
   
+  
+  
     
     
   # GET /posts/1
