@@ -55,19 +55,20 @@ gem "therubyracer"
 gem 'bootstrap-sass'
 
 #haml
-gem 'haml-rails', '>= 0.3.4', :group => :development
+#gem 'haml-rails', '>= 0.3.4', :group => :development
 
 #image upload
 gem "paperclip", "~> 3.0"
 
 #form helper
 gem 'bootstrap_form'
-gem 'formtastic'
-gem 'simple_form'
+#gem 'formtastic'
+#gem 'simple_form'
 
 #pagination
 gem 'kaminari'
 
-gem 'rename'
+gem "haml-rails"
+gem 'simple_form'
 
 gem 'acts-as-taggable-on'

@@ -64,8 +64,6 @@ GEM
       multi_json (~> 1.0)
     foreigner (1.4.2)
       activerecord (>= 3.0.0)
-    formtastic (2.2.1)
-      actionpack (>= 3.0)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -132,8 +130,6 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
-    rename (1.0.0)
-      rails (>= 3.0.0)
     rsolr (1.0.9)
       builder (>= 2.1.2)
     sass (3.2.9)
@@ -182,15 +178,13 @@ DEPENDENCIES
   bootstrap_form
   coffee-rails (~> 3.2.1)
   devise
-  formtastic
-  haml-rails (>= 0.3.4)
+  haml-rails
   jquery-rails
   kaminari
   mailboxer
   paperclip (~> 3.0)
   pg
   rails (= 3.2.13)
-  rename
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3

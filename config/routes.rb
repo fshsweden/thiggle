@@ -21,6 +21,17 @@ Thiggle::Application.routes.draw do
       get :dashboard
     end
   end
+
+  resources :dashboard do
+    collection do
+      get :index
+      get :my_posts
+      get :watched_posts
+      get :completed
+      get :edit_profile
+      get :mailbox
+    end
+  end
   
   resources :comments
 
