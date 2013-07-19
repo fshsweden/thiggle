@@ -26,9 +26,8 @@ Thiggle::Application.routes.draw do
     collection do
       get :index
       get :my_posts
-      get :watched_posts
-      get :completed
-      get :edit_profile
+      get :saved_posts
+      get :account
       get :mailbox
     end
   end

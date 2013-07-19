@@ -14,4 +14,11 @@ class DashboardController < ApplicationController
     end
   end 	
 
+  def my_posts
+    @posts = current_user.posts
+    respond_to do |format|
+    format.html { render @posts if request.xhr? }
+    end
+  end
+
 end

@@ -1,0 +1,26 @@
+<ul class="nav nav-tabs">
+  <li><%= link_to "Profile", dashboard_index_path %></li>
+  <li>
+    
+    <%= link_to "Mailbox", mailbox_dashboard_index_path %>
+  </li>
+  <li class= "active"><%= link_to "Selling", my_posts_dashboard_index_path %></li>
+  <li><%= link_to "Saved", saved_posts_dashboard_index_path %></li>
+  <li><%= link_to "Account", account_dashboard_index_path %></li>
+</ul>
+
+		<div class="container">
+
+	<table class="table">
+		<h3>My Posts</h3>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Sent </th>
+  </tr>
+	<% @posts.each do |p| %>
+	<td><%= p.title %></td>
+<% end %>
+
+</table>
+</div>
