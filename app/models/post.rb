@@ -17,6 +17,8 @@ class Post < ActiveRecord::Base
   has_attached_file :photo5, { :styles => { :small => "50x50#"} }
   acts_as_taggable
   paginates_per 2
+  
+  @@saved_posts = Array.new
 
   searchable do
     text :title, :description

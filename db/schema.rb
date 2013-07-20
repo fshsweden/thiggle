@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130718190722) do
+ActiveRecord::Schema.define(:version => 20130720172012) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20130718190722) do
     t.string   "photo5_content_type"
     t.integer  "photo5_file_size"
     t.datetime "photo5_updated_at"
+    t.boolean  "completed"
   end
 
   create_table "receipts", :force => true do |t|
@@ -159,6 +160,7 @@ ActiveRecord::Schema.define(:version => 20130718190722) do
     t.boolean  "admin"
     t.string   "username"
     t.integer  "rep"
+    t.string   "favorite_posts"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

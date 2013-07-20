@@ -14,13 +14,13 @@
 	<table class="table">
 		<h3>My Posts</h3>
     <tr>
-      <th>From</th>
-      <th>Subject</th>
-      <th>Sent </th>
+      <th>Title</th>
   </tr>
 	<% @posts.each do |p| %>
+	<tr>
 	<td><%= p.title %></td>
-<% end %>
+</tr>
+	<% end %>
 
 </table>
 </div>

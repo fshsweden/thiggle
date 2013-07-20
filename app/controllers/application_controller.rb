@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   def set_var
 	 if user_signed_in?
 		@messages_unread = current_user.mailbox.inbox(unread: true).count
+    @messages_unread_text = current_user.mailbox.inbox(unread: true).count.to_s + " Unread"
 		@display_username = current_user.username
 	 end
   
