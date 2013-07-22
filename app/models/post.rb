@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user  
   has_one :user
   has_many :comments, :dependent => :destroy
+  has_many :favorites, :through => :favorite_posts, :class_name => "User"
   has_attached_file :photo, { 
     :styles => { 
       :medium => "400x400^", 
@@ -17,8 +18,7 @@ class Post < ActiveRecord::Base
   has_attached_file :photo5, { :styles => { :small => "50x50#"} }
   acts_as_taggable
   paginates_per 2
-  
-  @@saved_posts = Array.new
+
 
   searchable do
     text :title, :description
