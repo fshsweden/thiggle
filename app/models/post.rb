@@ -2,7 +2,6 @@ class Post < ActiveRecord::Base
   belongs_to :user  
   has_one :user
   has_many :comments, :dependent => :destroy
-  has_many :favorites, :through => :favorite_posts, :class_name => "User"
   has_attached_file :photo, { 
     :styles => { 
       :medium => "400x400^", 

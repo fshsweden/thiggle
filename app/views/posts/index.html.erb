@@ -3,10 +3,22 @@
 
 <script type="text/javascript">//<![CDATA[ 
 $(window).load(function(){
-$(".my-link").click(function(){
+$(".my-link").click(function() {
     $(this).closest("div").next(".class2").toggle();
 });
 });//]]>  
+
+
+$(".favorite").click(function() {
+  var post_id = $(this).attr('id');
+  $.ajax({
+    type: "POST",
+    url: 'favorites/' + post_id,
+    success: function() {
+      // change image or something
+    }
+  })
+})
 
 </script>
 
@@ -59,6 +71,7 @@ $(".my-link").click(function(){
 						<%= post.description %><p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 
 						<% if user_signed_in? %>
+						
 						<div id = "reply">
 							<div class="container">
 							<div class="class1">
@@ -78,6 +91,7 @@ $(".my-link").click(function(){
 							
 							</div>
 							</div>
+							<a href="#" class= "favorite" id = "1"> click </a>
 						<%end%>
 							
 						

@@ -4,13 +4,12 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   acts_as_messageable
   has_many :posts
-  has_many :favorites, :through => :favorite_posts, :class_name => "Post"
   validates_presence_of :username
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^[A-Za-z\d_]+$/
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login, :rep

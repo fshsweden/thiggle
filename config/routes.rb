@@ -38,6 +38,8 @@ Thiggle::Application.routes.draw do
   resources :posts
 
 
+  match "favorites/:post_id" => "favorite_posts#create", :as => :favorite
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
