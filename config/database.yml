@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  database: thiggle_dev
+  pool: 5
+  timeout: 5000
+  username: matt
+  password: badfish
+
+test:
+  adapter: postgresql
+  database: thiggle_test
+  pool: 5
+  timeout: 5000
+  username: matt
+  password: badfish
+
+production:
+  adapter: postgresql
+  database: thiggle_live
+  pool: 5
+  timeout: 5000
+  username: matt
+  password: badfish
+
+
