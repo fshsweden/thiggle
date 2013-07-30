@@ -76,3 +76,7 @@ gem "haml-rails"
 gem 'simple_form'
 
 gem 'acts-as-taggable-on'
+
+gem 'aws-sdk'
+gem 'mandrill-api'
+gem 'json'
