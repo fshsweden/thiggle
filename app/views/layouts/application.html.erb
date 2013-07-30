@@ -42,9 +42,12 @@
 		          <% else %>
 		          	<li><%= link_to "Dashboard", dashboard_index_path %></li>
 		            <% end %>
+				<li><%= link_to "Post", new_post_path%></li>
 		        <% else %>
 	              <li><%= link_to "Register", new_user_registration_path, :class => 'pull-right' %> </li>    
 			      <li><%= link_to "Sign In", new_user_session_path, :class =>'button-small purple_light rounded3 pull-right' %></li>
+				<li><%= link_to "Post", new_user_session_path%></li>
+				
 	            <% end %>
 
 				

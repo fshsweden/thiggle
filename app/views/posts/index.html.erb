@@ -26,7 +26,7 @@ $(".favorite").click(function() {
 
 <div class="container-fluid">
 	<div class="row-fluid">
-		<div class="span3">
+		<div class="span2">
 			<div class="well sidebar-nav-fixed ">
 				<ul class="nav nav-list">
 
@@ -46,7 +46,7 @@ $(".favorite").click(function() {
 		
 		</div><!--/.well -->
 	</div><!--/span-->
-	<div class = "span9">
+	<div class = "span10">
 		<% if flash[:notice] %>
 		    <div class="notice"><%= flash[:notice] %></div>
 		  <% end %>
@@ -58,7 +58,7 @@ $(".favorite").click(function() {
 		<%# @post = @search.results%>
 		<% end %>
 		
-		<table class = "post" style="table-layout: fixed; width: 570px">
+		<table class = "post" style="table-layout: fixed; width: 800px">
 
 			<% @posts.each do |post| %>
 
@@ -86,6 +86,7 @@ $(".favorite").click(function() {
 								<% post.comments.each do |comment| %>
 								<b><%= comment.user_name %></b> wrote 
 								<p><%= comment.text %></p>
+								<hr>
 
 								<%end %>
 							
