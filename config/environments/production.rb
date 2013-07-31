@@ -97,4 +97,6 @@ config.action_mailer.default :charset => "utf-8"
         [u, p] == ['matt', 'badfish']
       end
     end
+    
+    Sunspot.config.solr.url = ENV['WEBSOLR_URL'] if ENV['WEBSOLR_URL']
 end
