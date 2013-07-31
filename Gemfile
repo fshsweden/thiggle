@@ -80,3 +80,5 @@ gem 'acts-as-taggable-on'
 gem 'aws-sdk'
 gem 'mandrill-api'
 gem 'json'
+#web server for heroku
+gem 'unicorn'
