@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  after_intialize :init
+  after_initialize :init
   acts_as_messageable
   has_many :posts
   validates_presence_of :username
