@@ -62,6 +62,7 @@ class PostsController < ApplicationController
     else 
       @post.user_id = 0
     end
+    
     User.find(@post.user_id).update_attributes(:rep => (current_user.rep + 10))
 
 

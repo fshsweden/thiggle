@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
+  after_intialize :init
   acts_as_messageable
   has_many :posts
   validates_presence_of :username
@@ -30,6 +31,9 @@ class User < ActiveRecord::Base
     self.send_message(user, subject, message)
   end
   
+def init
+  self.rep ||= 10
+end
     
   
 
