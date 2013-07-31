@@ -58,7 +58,15 @@ module Thiggle
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-
-
+    
+    config.action_mailer.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'heroku.com',
+    :authentication => :plain
+    }
+   
   end
 end
