@@ -35,7 +35,13 @@ def init
   self.rep ||= 10
 end
     
-  
+def name
+	return self.username
+end
+
+def mailboxer_email(object)
+	return self.email	
+end
 
 
   # attr_accessible :title, :body
