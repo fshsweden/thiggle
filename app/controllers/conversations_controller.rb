@@ -12,9 +12,11 @@ class ConversationsController < ApplicationController
     conversation = current_user.
       send_message(recipients, *conversation_params(:body, :subject)).conversation
 
+
     redirect_to conversation
     rescue ArgumentError
       redirect_to dashboard_home_index_path
+      UserMailer.conversation_email(recipients).deliver
     rescue ActionController::ActionControllerError
       redirect_to new_conversation_path
       
@@ -23,6 +25,8 @@ class ConversationsController < ApplicationController
 
   def reply
     current_user.reply_to_conversation(conversation, *message_params(:body, :subject))
+    @user = User.find(conversation.receipts.last.receiver_id)
+    UserMailer.conversation_email(@user).deliver
     redirect_to conversation
   end
 

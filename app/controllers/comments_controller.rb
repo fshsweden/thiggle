@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to posts_url, :flash => { :success => "Message" }}
+        UserMailer.comment_email(@comment).deliver
         #format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render controller: "posts", action: "index" }

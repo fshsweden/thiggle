@@ -19,3 +19,6 @@
 /config/database.yml
 /public/system
 .env
+/public/assets
+/solr/data
+
