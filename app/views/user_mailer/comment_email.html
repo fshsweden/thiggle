@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      Hi <%=@user.username %>,
+    </p>
+    <p> (<%= @commenter.username%>) posted a question on your post "<%= @post.title %>"</p></br>
+    <%= @comment.text %>
+    <p>
+      View it here <%= @url %>
+    </p>
+  </body>
+</html>
