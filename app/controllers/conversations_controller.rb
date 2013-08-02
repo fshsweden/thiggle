@@ -16,7 +16,7 @@ class ConversationsController < ApplicationController
     redirect_to conversation
     rescue ArgumentError
       redirect_to dashboard_home_index_path
-      UserMailer.conversation_email(recipients).deliver
+      UserMailer.conversation_email(recipients.last).deliver
     rescue ActionController::ActionControllerError
       redirect_to new_conversation_path
       
