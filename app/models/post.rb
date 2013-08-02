@@ -21,6 +21,8 @@ class Post < ActiveRecord::Base
 
   searchable do
     text :title, :description
+    string :category
+
   end
 
   attr_accessible :category, :description, :location, :price, :title, :user_id, :created_at, :photo, :photo2, :photo3, :photo4, :photo5, :tag_list
@@ -31,6 +33,10 @@ class Post < ActiveRecord::Base
   validates_attachment_size :photo2, :less_than => 5.megabytes
   validates_attachment_size :photo3, :less_than => 5.megabytes
   validates_attachment_size :photo4, :less_than => 5.megabytes
+  validates_attachment_content_type :photo, :content_type => /image/
+  validates_attachment_content_type :photo2, :content_type => /image/ 
+  validates_attachment_content_type :photo3, :content_type => /image/ 
+  validates_attachment_content_type :photo4, :content_type => /image/  
   
 
 end

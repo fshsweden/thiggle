@@ -34,7 +34,7 @@ Thiggle::Application.routes.draw do
   
   resources :comments
 
-  get 'tags/:tag', to: 'post#index', as: :tag
+  get 'tags/:tag', to: 'posts#index', as: :tag
   resources :posts
 
 

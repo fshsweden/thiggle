@@ -9,9 +9,14 @@ class PostsController < ApplicationController
     
     @search = Post.search do
       keywords(query_string)
+      with(:category, params[:cat]) if params[:cat].present?
     end
     @posts = @search.results
     #@post = Post.order(:create_at).page params[:page]
+
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).page(params[:page]).per(5)
+    end
 
     respond_to do |format|
       format.html # index.html.erb

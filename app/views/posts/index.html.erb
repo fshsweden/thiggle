@@ -36,7 +36,32 @@ $(".favorite").click(function() {
 						$ <input type="text" class="span3" placeholder ="0" id = "min" name = "min"> to $
 						<input type="text" class="span3" id= "max" name = "max">
 					</br></br><input type="submit" class= "btn span5" value="Update"/>
-			  
+					
+			  <li class="nav-header">Categories</li>
+		  <li><a href="/posts?cat=art">Art</a></li>
+		  <li><a href="/posts?cat=baby">Baby</a></li>
+
+              <li><a href="/posts?cat=antiques">Antiques</a></li>
+              <li><a href="/posts?cat=art">Art</a></li>
+              <li><a href="/posts?cat=baby">Baby</a></li>
+              <li><a href="/posts?cat=auto">Auto Parts</a></li>
+              <li><a href="/posts?cat=books">Books</a></li>
+              <li><a href="/posts?cat=bike">Bicycles</a></li>
+              <li><a href="/posts?cat=boat">Boats</a></li>
+              <li><a href="/posts?cat=cellphone">Cellphones</a></li>
+		  <li><a href="/posts?cat=clothes">Clothing & Accesories</a></li>
+		  <li><a href="/posts?cat=collectibles">Collectibles</a></li>
+		  <li><a href="/posts?cat=computers">Computers</a></li>
+		  <li><a href="/posts?cat=electronics">Electronics</a></li>
+		  <li><a href="/posts?cat=furniture">Furniture</a></li>
+		  <li><a href="/posts?cat=garage-sales">Garage and Estate Sales</a></li>
+		  <li><a href="/posts?cat=health">Health and Beauty</a></li>
+		  <li><a href="/posts?cat=jewelery">Jewelery</a></li>
+		  <li><a href="/posts?cat=music">Musical Instruments</a></li>
+		  <li><a href="/posts?cat=sporting">Sporting Goods</a></li>
+		  <li><a href="/posts?cat=tickets">Tickets</a></li>
+		  <li><a href="/posts?cat=tools">Tools</a></li>
+		  <li><a href="/posts?cat=toys">Toys and Games</a></li>
 				  
 			
 				</form>
@@ -68,7 +93,7 @@ $(".favorite").click(function() {
 					<td> <div class = 'thumbnail post'><%= image_tag post.photo.url(:thumbnail) %></div></td>
 					<td class= 'listing-title' style="word-wrap: break-word"><div class= "post"><%= link_to post.title, post , :class => "post-title"%></div>
 			
-						<%= post.description %><p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+						<%= post.description %><p> <%= raw post.tag_list.map { |t| link_to "##{t}", tag_path(t) }.join(' ') %></p>
 
 						<% if user_signed_in? %>
 						
