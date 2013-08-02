@@ -59,7 +59,8 @@ module Thiggle
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-
+    #siliences stupid heroku deprication error http://stackoverflow.com/questions/9027403/rails-2-3-style-plugins-and-deprecation-warnings-running-task-in-heroku
+    ActiveSupport::Deprecation.behavior = Proc.new { |msg, stack| $stderr.puts msg unless msg =~ /You have Rails 2.3-style plugins/ }
 
 
    
