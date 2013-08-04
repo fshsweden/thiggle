@@ -9,17 +9,6 @@ $(".my-link").click(function() {
 });//]]>  
 
 
-$(".favorite").click(function() {
-  var post_id = $(this).attr('id');
-  $.ajax({
-    type: "POST",
-    url: 'favorites/' + post_id,
-    success: function() {
-      // change image or something
-    }
-  })
-})
-
 </script>
 
 
@@ -117,7 +106,7 @@ $(".favorite").click(function() {
 							
 							</div>
 							</div>
-							<a href="#" class= "favorite" id = "1"> click </a>
+							
 						<%end%>
 							
 						
