@@ -27,7 +27,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'sunspot_solr'  # optional pre-packaged Solr distribution for use in development
-
+  gem 'faker'
 end
 
 gem 'jquery-rails'

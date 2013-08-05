@@ -5,17 +5,18 @@ class PostsController < ApplicationController
 
   
   def index
-    #@posts2 = Post.order('created_at DESC').page params[:page]
-    query_string = params[:q]
-    category = params[:cat]
-    
     @search = Post.search do
-      fulltext params[:q]
-      with(:created_at).less_than Time.zone.now
-      with(:category).equal_to("Antiques")
+      if params[:q].present?
+        fulltext params[:q]
+        with(:created_at).less_than Time.zone.now
+      end
+      if params[:cat].present? 
+        with(:category).equal_to(params[:cat])
+      end
+      order_by :created_at, :desc
     end
     @posts = @search.results
-    #@post = Post.order(:create_at).page params[:page]
+
 
     if params[:tag]
       @posts = Post.tagged_with(params[:tag]).page(params[:page]).per(5)
@@ -72,6 +73,9 @@ class PostsController < ApplicationController
     end
     
     User.find(@post.user_id).update_attributes(:rep => (current_user.rep + 10))
+    if @post.category.match("Garage & Estate Sales")
+      @post.category = "Garage"
+    end
 
 
 
