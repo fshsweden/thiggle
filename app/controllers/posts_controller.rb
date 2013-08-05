@@ -2,14 +2,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   
+
+  
   def index
     #@posts2 = Post.order('created_at DESC').page params[:page]
     query_string = params[:q]
     category = params[:cat]
     
     @search = Post.search do
-      keywords(query_string)
-      with(:category, params[:cat]) if params[:cat].present?
+      fulltext params[:q]
+      with(:created_at).less_than Time.zone.now
+      with(:category).equal_to("Antiques")
     end
     @posts = @search.results
     #@post = Post.order(:create_at).page params[:page]
