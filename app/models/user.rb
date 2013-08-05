@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   after_initialize :init
   acts_as_messageable
-  has_many :posts
+  has_many :posts, :dependent => :destroy
   validates_presence_of :username
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^[A-Za-z\d_]+$/
