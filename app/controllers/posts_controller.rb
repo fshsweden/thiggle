@@ -5,6 +5,11 @@ class PostsController < ApplicationController
 
   
   def index
+    @query_string = ""
+    if params[:q]
+      @query_string = params[:q].strip
+    end
+
     @search = Post.search do
       if params[:q].present?
         fulltext params[:q]
@@ -14,8 +19,11 @@ class PostsController < ApplicationController
         with(:category).equal_to(params[:cat])
       end
       
-      if params[:min]
-        with(:price).between(params[:min]..params[:max])
+      if params[:min].present?
+        with(:price).greater_than_or_equal_to(params[:min])
+      end
+      if params[:max].present?
+        with(:price).less_than_or_equal_to(params[:max])
       end
       order_by :created_at, :desc
     end
@@ -34,11 +42,7 @@ class PostsController < ApplicationController
     end
     
   end
-  
-  
-  
-    
-    
+
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -79,9 +83,6 @@ class PostsController < ApplicationController
     end
     
     User.find(@post.user_id).update_attributes(:rep => (current_user.rep + 10))
-    if @post.category.match("Garage & Estate Sales")
-      @post.category = "Garage"
-    end
 
 
 

@@ -1,0 +1,123 @@
+<form class="form-horizontal span4">
+<fieldset>
+
+<!-- Form Name -->
+
+<!-- Text input-->
+<li>
+    <input id="q" name="q" type="text" placeholder="Search" class="input-medium"></li></br>
+
+<!-- Prepended text-->
+
+<li class="nav-header">Search by Price</li>
+    Min  <div class="input-prepend" style="margin-left: 3px">
+      <span class="add-on">$</span>
+      <input id="min" name="min" class="input-mini" type="text">
+    </div>
+    </bR>    Max <div class="input-prepend">
+      <span class="add-on">$</span>
+      <input id="max" name="max" class="input-mini" placeholder="<%=params[:max]%>" type="text">
+    </div></br>
+</br><div align="center"><button id="seach-btn" name="seach-btn" class="btn btn-primary" >Search!</button></div></br>
+  <div class="">
+<label class="radio" for="All">
+      <input type="radio" name="cat" id="" value="">
+      Search all categories
+    </label></br>
+
+<!-- Multiple Radios -->
+<li class="nav-header">Search by Category</li>
+
+    <label class="radio" for="Antiques">
+      <input type="radio" name="cat" id="Antiques" value="Antiques">
+      Antiques
+    </label></br>
+    <label class="radio" for="Baby">
+      <input type="radio" name="cat" id="Baby" value="Baby">
+      Baby
+    </label></br>
+    <label class="radio" for="Auto Parts">
+      <input type="radio" name="cat" id="Auto Parts" value="Auto Parts">
+      Auto Parts
+    </label></br>
+    <label class="radio" for="Books">
+      <input type="radio" name="cat" id="Books" value="Books">
+      Books
+    </label></br>
+    <label class="radio" for="Bicycles">
+      <input type="radio" name="cat" id="Bicycles" value="Bicycles">
+      Bicycles
+    </label></br>
+    <label class="radio" for="Boats">
+      <input type="radio" name="cat" id="Boats" value="Boats">
+      Boats
+    </label></br>
+    <label class="radio" for="Cellphones">
+      <input type="radio" name="cat" id="Cellphones" value="Cellphones">
+      Cellphones
+    </label></br>
+    <label class="radio" for="cat-7">
+      <input type="radio" name="cat" id="Clothing &amp; Accesories" value="Clothing &amp; Accesories">
+      Clothing &amp; Accesories
+    </label></br>
+    <label class="radio" for="Collectible">
+      <input type="radio" name="cat" id="Collectible" value="Collectible">
+      Collectible
+    </label></br>
+    <label class="radio" for="Computers">
+      <input type="radio" name="cat" id="Computers" value="Computers">
+      Computers
+    </label></br>
+    <label class="radio" for="Electronics">
+      <input type="radio" name="cat" id="Electronics" value="Electronics">
+      Electronics
+    </label></br>
+    <label class="radio" for="Furniture">
+      <input type="radio" name="cat" id="Furniture" value="Furniture">
+      Furniture
+    </label></br>
+    <label class="radio" for="Garage &amp; Estate Sales">
+      <input type="radio" name="cat" id="Garage &amp; Estate Sales" value="Garage &amp; Estate Sales">
+      Garage &amp; Estate Sales
+    </label></br>
+    <label class="radio" for="Health &amp; Beauty">
+      <input type="radio" name="cat" id="Health &amp; Beauty" value="Health &amp; Beauty">
+      Health &amp; Beauty
+    </label></br>
+    <label class="radio" for="Jewelery">
+      <input type="radio" name="cat" id="Jewelery" value="Jewelery">
+      Jewelery
+    </label></br>
+    <label class="radio" for="Musical Instruments">
+      <input type="radio" name="cat" id="Musical Instruments" value="Musical Instruments">
+      Musical Instruments
+    </label></br>
+    <label class="radio" for="Sporting Goods">
+      <input type="radio" name="cat" id="Sporting Goods" value="Sporting Goods">
+      Sporting Goods
+    </label></br>
+    <label class="radio" for="Tickets">
+      <input type="radio" name="cat" id="Tickets" value="Tickets">
+      Tickets
+    </label></br>
+    <label class="radio" for="Tools">
+      <input type="radio" name="cat" id="Tools" value="Tools">
+      Tools
+    </label></br>
+    <label class="radio" for="Toys &amp; Games">
+      <input type="radio" name="cat" id="Toys &amp; Games" value="Toys &amp; Games">
+      Toys &amp; Games
+    </label>
+  </div>
+
+
+</fieldset>
+</form>
+
+<script type="text/javascript" language="javascript">
+$('input#min.input-mini').val("<%=params[:min] %>")
+$('input#max.input-mini').val("<%=params[:max] %>")
+$('input#q.input-medium').val(" <%= @query_string %>")
+cat = document.getElementById("<%= params[:cat] %>")
+cat.checked = true
+</script>
