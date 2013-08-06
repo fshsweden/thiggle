@@ -13,6 +13,10 @@ class PostsController < ApplicationController
       if params[:cat].present? 
         with(:category).equal_to(params[:cat])
       end
+      
+      if params[:min]
+        with(:price).between(params[:min]..params[:max])
+      end
       order_by :created_at, :desc
     end
     @posts = @search.results

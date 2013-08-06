@@ -23,6 +23,7 @@ class Post < ActiveRecord::Base
     text :title, :description
     string :category
     time :created_at
+    integer :price
   end
 
   

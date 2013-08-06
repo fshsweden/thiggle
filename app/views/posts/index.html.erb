@@ -22,12 +22,18 @@ $(".my-link").click(function() {
 	  	
 					<li class="nav-header">Search by Price</li>
 					<form name="sidenav-search" action="/posts" method="get" class= "form-inline">
+						<input type="text" class="span8 smaller" id ="q" name="q" placeholder="Search"></br>
 						$ <input type="text" class="span3" placeholder ="0" id = "min" name = "min"> to $
 						<input type="text" class="span3" id= "max" name = "max">
+						
+
 					</br></br><input type="submit" class= "btn span5" value="Update"/>
 
 			  <li class="nav-header">Categories</li>
-              <li><a href="/posts?cat=Antiques">Antiques</a></li>
+              <div class="btn-group" data-toggle="buttons-checkbox">
+			  <input id="age_child" name="age" type="radio" value="child" />
+		  </div>
+		  <li><a href="/posts?cat=Antiques">Antiques</a></li>
               <li><a href="/posts?cat=Art">Art</a></li>
               <li><a href="/posts?cat=Baby">Baby</a></li>
               <li><a href="/posts?cat=Auto%20Parts">Auto Parts</a></li>
@@ -43,7 +49,7 @@ $(".my-link").click(function() {
 		  <li><a href="/posts?cat=Garage%20%26%20Estate%20Sales">Garage & Estate Sales</a></li>
 		  <li><a href="/posts?cat=Health%20%26%20Beauty">Health & Beauty</a></li>
 		  <li><a href="/posts?cat=Jewelery">Jewelery</a></li>
-		  <li><a href="/posts?cat=Music">Musical Instruments</a></li>
+		  <li><a href="/posts?cat=Musical%20Instruments">Musical Instruments</a></li>
 		  <li><a href="/posts?cat=Sporting%20Goods">Sporting Goods</a></li>
 		  <li><a href="/posts?cat=Tickets">Tickets</a></li>
 		  <li><a href="/posts?cat=Tools">Tools</a></li>
