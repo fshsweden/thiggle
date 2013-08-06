@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with(params[:tag]).page(params[:page]).per(5)
     end
 
-    @posts = Post.order(:created_at).page(params[:page]).per(10)
+    #@posts = Post.order(:created_at).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
