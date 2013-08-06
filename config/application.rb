@@ -61,8 +61,8 @@ module Thiggle
     
     #siliences stupid heroku deprication error http://stackoverflow.com/questions/9027403/rails-2-3-style-plugins-and-deprecation-warnings-running-task-in-heroku
     ActiveSupport::Deprecation.behavior = Proc.new { |msg, stack| $stderr.puts msg unless msg =~ /You have Rails 2.3-style plugins/ }
-
-
+    config.time_zone = 'Central Time (US & Canada)'
+    config.active_record.default_timezone = :local
    
   end
 end
