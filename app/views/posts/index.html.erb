@@ -13,10 +13,10 @@ $(".my-link").click(function() {
 
 
 
-<div class="container-fluid">
+<div class="">
 	<div class="row-fluid">
-		<div class="span2">
-			<div class="well sidebar-nav-fixed ">
+		<div>
+			<div class="well sidebar-nav span2">
 				<ul class="nav nav-list">
 					<%= render 'side_search' %>
 
@@ -29,20 +29,20 @@ $(".my-link").click(function() {
 		    <div class="notice"><%= flash[:notice] %></div>
 		  <% end %>
 
-		<div class = "container">
+		<div >
 			<% if params.has_key?(:q) %>
 			<b><%= @posts.count%></b> results for <%= params[:q] %>
 		</div> 
 		<%# @post = @search.results%>
 		<% end %>
 		
-		<table class = "post" style="table-layout: fixed; width: 800px">
+		<table class = "post">
 
 			<% @posts.each do |post| %>
 
 
 			<tr class = "well well-small marginbottom listing">
-				<ul class = "thumbnails">
+				
 					<td> <div class = 'thumbnail post'><%= image_tag post.photo.url(:thumbnail) %></div></td>
 					<td class= 'listing-title' style="word-wrap: break-word"><div class= "post"><%= link_to post.title, post , :class => "post-title"%></div>
 			
@@ -78,7 +78,7 @@ $(".my-link").click(function() {
 
 						<td class = "price"><b>$<%= post.price %></b></td></td>
 				
-					</ul>
+					
 
 				</tr>
     			
