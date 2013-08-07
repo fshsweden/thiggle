@@ -47,7 +47,36 @@
 	              <li><%= link_to "Register", new_user_registration_path, :class => 'pull-right' %> </li>    
 			      <li><%= link_to "Sign In", new_user_session_path, :class =>'button-small purple_light rounded3 pull-right' %></li>
 				<li><%= link_to "Post", new_user_session_path%></li>
-				
+				<!-- Button to trigger modal -->
+<li><a href="#myModal" role="button" class="button-small purple_light rounded3 pull-right" data-toggle="modal">Sign in</a></li>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Sign in</h3>
+  </div>
+  <div class="modal-body">
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div style = "text-align:center"><%= f.label :login %>
+  <%= f.text_field :login, :autofocus => true, :style => "margin-left: 22px" %></div>
+
+  <div style = "text-align:center"><%= f.label :password %>
+  <%= f.password_field :password %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    
+  <% end -%>
+
+  <div class = "rows"><%= f.submit "SIGN IN", :class => 'button-small purple_normal rounded3' %><div><%= f.check_box :remember_me %></div><div> <%=f.label :remember_me %></div></div>
+<% end %>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
 	            <% end %>
 
 <li class = "nomargin"><form class = "inline-form">
