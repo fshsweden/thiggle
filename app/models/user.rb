@@ -8,12 +8,13 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^[A-Za-z\d_]+$/
+  accepts_nested_attributes_for :posts
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login, :rep
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login, :rep, :posts_attributes
   attr_accessible :role_ids, :as => :admin
   attr_accessor :login
 

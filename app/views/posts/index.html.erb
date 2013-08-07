@@ -44,7 +44,7 @@ $(".my-link").click(function() {
 			<tr class = "well well-small marginbottom listing">
 				
 					<td> <div class = 'thumbnail post'><%= image_tag post.photo.url(:thumbnail) %></div></td>
-					<td class= 'listing-title' style="word-wrap: break-word"><div class= "post"><%= link_to post.title, post , :class => "post-title"%></div>
+					<td class= 'listing-title' style="word-wrap: break-word"><div class= "post" style="width:400px"><%= link_to post.title, post , :class => "post-title"%></div>
 			
 						<%= post.description %><p> <%= raw post.tag_list.map { |t| link_to "##{t}", tag_path(t) }.join(' ') %></p>
 
