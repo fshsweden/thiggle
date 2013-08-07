@@ -85,8 +85,10 @@ list-style-type: disc;
 
 .listing-title{
 	padding-left: 10px;
-	width: 240px;
+	width: 400px;
     word-wrap:break-word;
+    word-break: break-all;
+    display: inline-block;
 }
 
 
