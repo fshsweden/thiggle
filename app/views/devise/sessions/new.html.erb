@@ -1,14 +1,14 @@
 </br>
   <div class="container"> 
-<div class= "span1 pull-right"></div>
-<div class="well well-small span3  pull-right">
+<div class= "span3 pull-right"></div>
+<div class="well well-small span6" style="align:center">
 <h4>Sign in</h4>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :login %>
-  <%= f.text_field :login, :autofocus => true %></div>
+  <div><%= f.label :login %></br>
+  <%= f.text_field :login, :autofocus => true%></div>
 
-  <div><%= f.label :password %>
+  <div><%= f.label :password %><br/>
   <%= f.password_field :password %></div>
 
   <% if devise_mapping.rememberable? -%>

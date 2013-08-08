@@ -64,7 +64,7 @@ module Thiggle
     config.time_zone = 'Central Time (US & Canada)'
     config.active_record.default_timezone = :local
     
-    config.autoload_paths += %W(#{config.root}/lib)
+  
    
   end
 end

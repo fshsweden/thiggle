@@ -18,7 +18,7 @@
   </tr>
 	<% @posts.each do |p| %>
 	<tr>
-	<td><%= p.title %></td>
+	<td><%=link_to p.title, "/posts/#{p.id}"%></td>
 </tr>
 	<% end %>
 
