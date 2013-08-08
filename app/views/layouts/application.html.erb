@@ -18,6 +18,10 @@
     ga('create', 'UA-42185689-1', 'thiggle.com');
     ga('send', 'pageview');
 
+    $('#login').on('shown', function () {
+        $('#user_login').focus();
+    })
+
   </script>
 </head>  
 <body>
@@ -48,10 +52,10 @@
 			      <li><%= link_to "Sign In", new_user_session_path, :class =>'button-small purple_light rounded3 pull-right' %></li>
 				<li><%= link_to "Post", new_user_session_path%></li>
 				<!-- Button to trigger modal -->
-<li><a href="#myModal" role="button" class="button-small purple_light rounded3 pull-right" data-toggle="modal">Sign in</a></li>
+<li><a href="#login" role="button" onclick= "javascript:document.getElementById('input#user_login').focus()" class="button-small purple_light rounded3 pull-right" data-toggle="modal">Sign in</a></li>
  
 <!-- Modal -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">Sign in</h3>
@@ -65,16 +69,16 @@
   <%= f.password_field :password %></div>
 
   <% if devise_mapping.rememberable? -%>
-    
+    <div style = "text-align:right"><%= f.check_box :remember_me %><%=f.label :remember_me %></div>
   <% end -%>
 
-  <div class = "rows"><%= f.submit "SIGN IN", :class => 'button-small purple_normal rounded3' %><div><%= f.check_box :remember_me %></div><div> <%=f.label :remember_me %></div></div>
-<% end %>
+  
+
 
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
+    <!-- <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button> -->
+    <div class = "rows"><%= f.submit "SIGN IN", :class => 'button-small purple_normal rounded3' %><div> </div></div><% end %>
   </div>
 </div>
 	            <% end %>

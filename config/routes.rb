@@ -39,6 +39,7 @@ Thiggle::Application.routes.draw do
   get 'tags/:tag', to: 'posts#index', as: :tag
   resources :posts
   
+  match 'user_root' => redirect("/dashboard/account")
 
 
 

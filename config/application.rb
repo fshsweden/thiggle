@@ -63,6 +63,8 @@ module Thiggle
     ActiveSupport::Deprecation.behavior = Proc.new { |msg, stack| $stderr.puts msg unless msg =~ /You have Rails 2.3-style plugins/ }
     config.time_zone = 'Central Time (US & Canada)'
     config.active_record.default_timezone = :local
+    
+    config.autoload_paths += %W(#{config.root}/lib)
    
   end
 end
