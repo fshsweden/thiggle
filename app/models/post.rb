@@ -5,16 +5,20 @@ class Post < ActiveRecord::Base
   has_attached_file :photo, { 
     :styles => { 
       :medium => "400x400^", 
-      :thumbnail => "225x168#"
+      :thumb => "150x125#"
       },
     :convert_options => {
       :thumb => "-quality 75 -strip -gravity center"
     }
     }
-  has_attached_file :photo2, { :styles => { :small => "50x50#"} }
-  has_attached_file :photo3, { :styles => { :small => "50x50#"} }
-  has_attached_file :photo4, { :styles => { :small => "50x50#"} }
-  has_attached_file :photo5, { :styles => { :small => "50x50#"} }
+  has_attached_file :photo2, { :styles => { :thumb => "150x125#"}, :convert_options => {
+      :thumb => "-quality 75 -strip" } }
+  has_attached_file :photo3, { :styles => { :thumb => "150x125#"}, :convert_options => {
+      :thumb => "-quality 75 -strip" } }
+  has_attached_file :photo4, { :styles => { :thumb => "150x125#"}, :convert_options => {
+      :thumb => "-quality 75 -strip" } }
+  has_attached_file :photo5, { :styles => { :thumb => "150x125#"}, :convert_options => {
+      :thumb => "-quality 75 -strip" } }
   acts_as_taggable
   paginates_per 2
   attr_accessible :category, :description, :location, :price, :title, :user_id, :created_at, :photo, :photo2, :photo3, :photo4, :photo5, :tag_list, :post_id, :posts

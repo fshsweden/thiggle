@@ -1,5 +1,4 @@
-
-
+<script src="/assets/jquery.cycle.all.js?body=1" type="text/javascript"></script>
 
 <script type="text/javascript">//<![CDATA[ 
 $(window).load(function(){
@@ -7,6 +6,17 @@ $(".my-link").click(function() {
     $(this).closest("div").next(".class2").toggle();
 });
 });//]]>  
+
+
+
+
+</script>
+
+<script type="text/javascript">//<![CDATA[ 
+
+$(function() {
+    $( ".pics" ).cycle();
+});
 
 
 </script>
@@ -43,7 +53,24 @@ $(".my-link").click(function() {
 
 			<tr class = "well well-small marginbottom listing">
 				
-					<td> <div class = 'thumbnail post'><%= image_tag post.photo.url(:thumbnail) %></div></td>
+					<td> <div class = 'thumbnail post'>
+			<div class = "pics">
+            <%= image_tag post.photo.url(:thumb) %>
+            <% if post.photo2.present? %> 
+                <%= image_tag post.photo2.url(:thumb) %>
+            <% end %>
+            <% if post.photo3.present? %> 
+            <%= image_tag post.photo3.url(:thumb) %>
+            <% end %>
+            <% if post.photo4.present? %> 
+            <%= image_tag post.photo4.url(:thumb) %>
+            <% end %>
+        </div>
+
+
+
+
+					</td>
 					<td class= 'listing-title' style="word-wrap: break-word"><div class= "post" style="width:400px"><%= link_to post.title, post , :class => "post-title"%></div>
 			
 						<%= post.description %><p> <%= raw post.tag_list.map { |t| link_to "##{t}", tag_path(t) }.join(' ') %></p>

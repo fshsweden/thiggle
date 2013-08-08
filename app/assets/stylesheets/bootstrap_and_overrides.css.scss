@@ -5,6 +5,38 @@
 /*@import "bootstrap-responsive";
 */
 
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+.slideshow-block{
+    position: relative;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+a.link{
+    position:absolute;
+    height: 150px;
+    width: 200px;
+    display: block;
+    z-index: 10;
+    background: url('img/logo.png') no-repeat center top;
+}
+a.link:hover{
+    background-position: center -150px;
+}
+.slides{
+    z-index:0;
+    visibility:visible;
+}
+.slides.active{
+    visibility:visible;
+}
+
+
 .over {
     color: red;
 }
