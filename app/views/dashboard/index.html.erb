@@ -9,11 +9,12 @@
   <li><%= link_to "Account", account_dashboard_index_path %></li>
 </ul>
 
-
-Username : <%= current_user.username%>
-Rep: <%= current_user.rep%>
-Date Joined: <%= to_date(current_user.created_at)%>
-Seen: <%= time_or_date(current_user.last_sign_in_at)%>
+<div style="margin-left: 100px">
+Username : <%= current_user.username%></br>
+Rep: <%= current_user.rep%></br>
+Date Joined: <%= to_date(current_user.created_at)%></br>
+Seen: <%= time_or_date(current_user.last_sign_in_at)%></br>
+</div>
 
   
 

@@ -35,7 +35,7 @@
 				</ul>
 				<ul class="nav nav-pills pull-right" style="margin-top:10px">
 					<% if user_signed_in? %>
-					<li class="top-nav-pills"><%= link_to @display_username, dashboard_index_path, :class => 'pull-right' %></li>
+					<li class="top-nav-pills"><%= link_to @display_username, mailbox_dashboard_index_path, :class => 'pull-right' %></li>
 			   		
 					<% if @messages_unread > 0 %>
 					<li><span class="badge badge-important"><%= link_to @messages_unread_text, mailbox_dashboard_index_path, class: 'mailbox-link'%></span></li>
