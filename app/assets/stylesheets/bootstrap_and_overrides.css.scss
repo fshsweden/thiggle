@@ -111,6 +111,12 @@ list-style-type: disc;
     filter: none;
 	
 }
+
+hr{
+    margin: 0 0;
+    border-top: 1px solid #D3D3D3;  
+}
+
 .navbar-inner .container {width:704px;}
 
 .nomargin{ margin: 0px;}
@@ -118,8 +124,7 @@ list-style-type: disc;
 .listing-title{
 	padding-left: 10px;
 	width: 400px;
-    word-wrap:break-word;
-    word-break: break-all;
+    word-wrap:normal;
     display: inline-block;
 }
 
