@@ -29,7 +29,6 @@ class PostsController < ApplicationController
     end
     @posts = @search.results
 
-
     if params[:tag]
       @posts = Post.tagged_with(params[:tag]).page(params[:page]).per(5)
     end

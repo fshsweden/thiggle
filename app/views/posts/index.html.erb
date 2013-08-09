@@ -96,7 +96,11 @@ jQuery(function($){
 
 
 					</td>
-					<td class= 'listing-title' style="word-wrap: break-word"><div class= "post" style="width:400px"><%= link_to post.title, post , :class => "post-title"%></br><div style= "color:grey" ><%= post.street %></div><hr></div>
+					<td class= 'listing-title' style="word-wrap: break-word"><div class= "post" style="width:400px"><%= link_to post.title, post , :class => "post-title"%></br><div style= "color:grey" >
+                        <%= link_to post.category, posts_path(:q => params[:q], :min => params[:min], :max => params[:max], :cat => params[:cat])%>
+
+
+                         in <%= post.location %> <% if post.street.present? %> > <%= post.street %> <%end%></div><hr></div>
 			
 						<%= post.description %><p> <%= raw post.tag_list.map { |t| link_to "##{t}", tag_path(t) }.join(' ') %></p>
 
@@ -109,7 +113,8 @@ jQuery(function($){
 							<!-- <a href="#" class="my-link">Reply</a> -->
 							</div>
 							<div class="class2" style = "display:none">
-								<%= form_for :comment, :controller => "comments_controller", :url => url_for(:controller => 'comments', :action => 'create') do |f| %>
+								Ask @<%= User.find(post.user_id).username %> a question:  </br>
+                                <%= form_for :comment, :controller => "comments_controller", :url => url_for(:controller => 'comments', :action => 'create') do |f| %>
 								<%= f.text_field :text %>
 								<%= f.hidden_field :post_id, :value => post.id %>
 								<%end %>
