@@ -26,6 +26,7 @@ class PostsController < ApplicationController
         with(:price).less_than_or_equal_to(params[:max])
       end
       order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
     end
     @posts = @search.results
 
