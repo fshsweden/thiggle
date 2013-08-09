@@ -154,8 +154,13 @@ jQuery(function($){
 
 
 
-	<%= paginate @posts %>
-
+	<div class= 'container'> 
+        <div class= 'row-fluid'>
+            <div class = "span6"> 
+                <%= paginate @posts %>
+            </div>
+        </div>
+    </div>
 	<%= link_to 'New Post', new_post_path %>
 </div>
 
