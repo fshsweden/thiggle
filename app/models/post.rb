@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
       :thumb => "-quality 75 -strip" } }
   acts_as_taggable
   paginates_per 2
-  attr_accessible :category, :description, :location, :price, :title, :user_id, :created_at, :photo, :photo2, :photo3, :photo4, :photo5, :tag_list, :post_id, :posts
+  attr_accessible :category, :description, :location, :price, :title, :user_id, :created_at, :photo, :photo2, :photo3, :photo4, :photo5, :tag_list, :post_id, :posts, :street
 
   searchable do
     text :title, :description
