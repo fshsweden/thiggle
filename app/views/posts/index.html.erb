@@ -14,10 +14,28 @@ $(".my-link").click(function() {
 
 <script type="text/javascript">//<![CDATA[ 
 
-$(function() {
-    $( ".pics" ).cycle();
-});
 
+
+jQuery(function($){
+
+
+    // Cycle plugin
+    $('.slides').cycle({
+        fx:     'none',
+        speed:   500,
+        timeout: 700
+    }).cycle("pause");
+    
+    
+
+    // Pause & play on hover
+    $('.slideshow-block').hover(function(){
+        $(this).find('.slides').addClass('active').cycle('resume');
+    }, function(){
+        $(this).find('.slides').removeClass('active').cycle('pause');
+    });
+
+});
 
 </script>
 
@@ -54,18 +72,21 @@ $(function() {
 			<tr class = "well well-small marginbottom listing">
 				
 					<td> <div class = 'thumbnail post'>
-			<div class = "pics">
-            <%= image_tag post.photo.url(:thumb) %>
-            <% if post.photo2.present? %> 
-                <%= image_tag post.photo2.url(:thumb) %>
-            <% end %>
-            <% if post.photo3.present? %> 
-            <%= image_tag post.photo3.url(:thumb) %>
-            <% end %>
-            <% if post.photo4.present? %> 
-            <%= image_tag post.photo4.url(:thumb) %>
-            <% end %>
-        </div>
+						<div class = "slideshow-block" style="background: url(<%= post.photo.url(:thumb) %>) no-repeat">
+							<a href="#" class="link"></a>
+							<div class = "slides" >
+           						 	<%= image_tag post.photo.url(:thumb) %>
+           						  	<% if post.photo2.present? %> 
+              							<%= image_tag post.photo2.url(:thumb) %>
+            						<% end %>
+            						<% if post.photo3.present? %> 
+            							<%= image_tag post.photo3.url(:thumb) %>
+           					 		<% end %>
+           				  		      <% if post.photo4.present? %> 
+           			   			   		<%= image_tag post.photo4.url(:thumb) %>
+           		   					<% end %>
+        	  					</div>
+  		    				</div>
 
 
 
