@@ -1,19 +1,26 @@
+<script>
+var counter = 1;
+var numBoxes = 4;
+function toggle4(showHideDiv) {
+       var ele = document.getElementById(showHideDiv + counter);
+       if(ele.style.display == "block") {
+              ele.style.display = "none";
+       }
+       else {
+              ele.style.display = "block";
+       }
+       if(counter == numBoxes) {
+                document.getElementById("toggleButton").style.display = "none";
+       }
+}
+</script>
 
+<div class = "span2"> </div>
+<div class= "container well">
 <% resource.posts.build %>
-<%= bootstrap_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= bootstrap_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: 'form-horizontal' }, help: :block) do |f| %>
 <%= devise_error_messages! %>
  
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username, :autofocus => true %></div>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
 
   
 
@@ -26,7 +33,7 @@
     <%= post_fields.select :category, ["Antiques", "Art", "Baby", "Auto Parts", "Books", "Bicycles", "Boats", "Automobiles", "Cellphones", "Clothing & Accesories", "Collectibles", "Computers", "Electronics", "Furniture", "Garage & Estate Sales", "Health & Beauty", "Jewelery", "Musical Instruments", "Sporting Goods", "Tickets", "Tools", "Toys & Games" ] %>
     <%= post_fields.text_area :description, label: 'Description', :rows => 8, :cols => 40 %> <p class= "offset7" id="count">
 
-    <em id="count">/em> 
+    <em id="count"></em> 
 
 
     <%= post_fields.file_field :photo %>
@@ -39,7 +46,41 @@
    
   <%end%>
 
+    <div>
+  <%= f.text_field :username, :autofocus => true %></div>
+
+  <div>
+  <%= f.email_field :email %></div>
+
+  <div>
+  <%= f.password_field :password %></div>
+
+  <div>
+  <%= f.password_field :password_confirmation %></div>
+
+
 
   <div><%= f.submit "Sign up and Post", :class => 'btn' %></div>
 
 <% end %>
+
+<script>
+maxCharacters = 200;
+
+$('#count').text(maxCharacters + " Characters Left");
+
+$('textarea').bind('keyup keydown', function() {
+    var count = $('#count');
+    var characters = $(this).val().length;
+
+    if (characters > maxCharacters) {
+        count.addClass('over');
+    } else {
+        count.removeClass('over');
+    }
+
+    count.text(maxCharacters - characters + " Characters Left");
+});
+
+
+</script>

@@ -24,19 +24,20 @@ function toggle4(showHideDiv) {
     <%= f.text_field :price, prepend: '$', label: 'Price', :class => "span1" %>
    
     <%= f.select :location, ["city of chicago", "north chicago", "south chicago", "west chicago", "northwest suburbs", "northwest indiana" ] %>
+    <%= f.text_field :street, label: "Street or Intersection (Optional)" %>
     <%= f.select :category, ["Antiques", "Art", "Baby", "Auto Parts", "Books", "Bicycles", "Boats", "Automobiles", "Cellphones", "Clothing & Accesories", "Collectibles", "Computers", "Electronics", "Furniture", "Garage & Estate Sales", "Health & Beauty", "Jewelery", "Musical Instruments", "Sporting Goods", "Tickets", "Tools", "Toys & Games" ] %>
     <%= f.text_area :description, label: 'Description', :rows => 8, :cols => 40 %> <p class= "offset7" id="count">
 
-    <em id="count">/em> 
+    <p id="count"></p>
 
 
     <%= f.file_field :photo %>
-    <div><input id="toggleButton" type="button" value="Add Additional Photos..." onclick="counter++; toggle4('photo');" class = "pull-right"></div>
+    <div><input id="toggleButton" type="button" value="ADD ADDITIONAL PHOTOS..." onclick="counter++; toggle4('photo');" class = "pull-right button-small blue_normal rounded3"></div>
     <div id = "photo2" style = "display: none;"><%= f.file_field :photo2 %></div>
     <div id = "photo3" style = "display: none;"><%= f.file_field :photo3 %></div>
     <div id = "photo4" style = "display: none;"><%= f.file_field :photo4 %></div>
-    <%= f.label :tag_list, "Tags (separated by commas)"%>
-    <%= f.text_field :tag_list %>
+
+    <%= f.text_field :tag_list, label: "Tags    (separated by commas)" %>
 
     <div class="actions">
       <%= f.submit 'SUBMIT', :class => 'button-small blue_normal rounded3' %>
@@ -49,7 +50,7 @@ function toggle4(showHideDiv) {
 <script>
 maxCharacters = 200;
 
-$('#count').text(maxCharacters);
+$('#count').text(maxCharacters + " Characters Left");
 
 $('textarea').bind('keyup keydown', function() {
     var count = $('#count');
@@ -61,7 +62,7 @@ $('textarea').bind('keyup keydown', function() {
         count.removeClass('over');
     }
 
-    count.text(maxCharacters - characters);
+    count.text(maxCharacters - characters + " Characters Left");
 });
 
 
