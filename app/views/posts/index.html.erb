@@ -23,7 +23,10 @@ jQuery(function($){
     $('.slides').cycle({
         fx:     'none',
         speed:   500,
-        timeout: 700
+        timeout: 700,
+        delay:  -4000,
+        height:  'auto',
+        fit: 1
     }).cycle("pause");
     
     
@@ -68,12 +71,13 @@ jQuery(function($){
 
 			<% @posts.each do |post| %>
 
-
-			<tr class = "well well-small marginbottom listing">
+			<tr class = "well well-small marginbottom listing" id = <%= post.id %> >
 				
-					<td> <div class = 'thumbnail post'>
+					<td> 
+                        
+                        <div class = 'thumbnail post' style= 'width: 160px'>
 						<div class = "slideshow-block" style="background: url(<%= post.photo.url(:thumb) %>) no-repeat">
-							<a href="#" class="link"></a>
+						
 							<div class = "slides" >
            						 	<%= image_tag post.photo.url(:thumb) %>
            						  	<% if post.photo2.present? %> 
@@ -87,7 +91,7 @@ jQuery(function($){
            		   					<% end %>
         	  					</div>
   		    				</div>
-
+                        
 
 
 
@@ -122,13 +126,14 @@ jQuery(function($){
 						<%end%>
 							
 						
-						</div>
+						
 
 						<td class = "price"><b>$<%= post.price %></b></td></td>
 				
 					
 
 				</tr>
+                </div>
     			
 				<% end %>
 				
@@ -148,3 +153,10 @@ jQuery(function($){
 	<%= link_to 'New Post', new_post_path %>
 </div>
 
+<script>
+$('.listing').click(function() {
+  location.href= "posts/" + this.id;
+});
+
+$('.listing').css('cursor','pointer');
+</script>
