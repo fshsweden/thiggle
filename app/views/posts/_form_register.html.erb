@@ -30,6 +30,7 @@ function toggle4(showHideDiv) {
     <%= post_fields.text_field :price, prepend: '$', label: 'Price', :class => "span1" %>
    
     <%= post_fields.select :location, ["city of chicago", "north chicago", "south chicago", "west chicago", "northwest suburbs", "northwest indiana" ] %>
+    <%= post_fields.text_field :street, label: "Street or Intersection (Optional)" %>
     <%= post_fields.select :category, ["Antiques", "Art", "Baby", "Auto Parts", "Books", "Bicycles", "Boats", "Automobiles", "Cellphones", "Clothing & Accesories", "Collectibles", "Computers", "Electronics", "Furniture", "Garage & Estate Sales", "Health & Beauty", "Jewelery", "Musical Instruments", "Sporting Goods", "Tickets", "Tools", "Toys & Games" ] %>
     <%= post_fields.text_area :description, label: 'Description', :rows => 8, :cols => 40 %> <p class= "offset7" id="count">
 
