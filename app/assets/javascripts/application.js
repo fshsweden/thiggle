@@ -20,3 +20,4 @@
 //= require jquery.cycle.all
 //= require jquery.gallerific
 //= require jquery.drag_to_resize
+//= require jquery.opacityrollover
