@@ -57,17 +57,37 @@ jQuery(function($){
 	</div><!--/span-->
 	<div class = "span10">
 		<% if flash[:notice] %>
-		    <div class="notice"><%= flash[:notice] %></div>
+		    <div class="alert span9">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+		    	<%= flash[:notice] %></div>
 		  <% end %>
 
-		<div >
-			<% if params.has_key?(:q) %>
-			<b><%= @posts.count%></b> results for <%= params[:q] %>
+		<div style= "font-size:20px">
+			<b><%= @posts.count%></b> results for 
+			<% if params[:q].present?  %>
+			<div > <b><%= @posts.count%></b> results for <%= params[:q] %> 
+			<% end %>
+				<% if params[:location].present? %>
+				around <%= params[:location]%>
+				<% end %>
+				<% if params[:min].present? %>
+				for at least $<%= params[:min] %> 
+				<% end %>
+				<% if params[:max].present?  %>
+				but under $<%= params[:max] %>
+				<% end %>
+				<% if params[:cat].present? %>
+				in <b><%=params[:cat]%></b>.
+				<%else %>
+				in All Categories.
+				<%end %>
+				</br>
+			</div>
 		</div> 
 		<%# @post = @search.results%>
-		<% end %>
 		
-		<table class = "post">
+		
+		<table class = "post" style= "margin-left:100px">
 
 			<% @posts.each do |post| %>
 

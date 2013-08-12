@@ -21,16 +21,27 @@
                 <%= image_tag @post.photo.url(:thumb) %>
             			</a>
         			</li>
+					<% if @post.photo2.present? %>
 					<li> 
 						<a class="thumb" name="1" href="<%= @post.photo2.url(:medium) %>" title="your image title">
                 <%= image_tag @post.photo2.url(:thumb) %>
             			</a>
         			</li>
+        			<% end %>
+        			<% if @post.photo3.present? %>
 					<li> 
 						<a class="thumb" name="1" href="<%= @post.photo3.url(:medium) %>" title="your image title">
                 <%= image_tag @post.photo3.url(:thumb) %>
             			</a>
         			</li>
+        			<% end %>
+        			<% if @post.photo4.present? %>
+        			<li> 
+						<a class="thumb" name="1" href="<%= @post.photo3.url(:medium) %>" title="your image title">
+                <%= image_tag @post.photo4.url(:thumb) %>
+            			</a>
+        			</li>
+        			<% end %>
 
     		</div>
 
