@@ -35,8 +35,13 @@
     		</div>
 
 		</td>
-		<td style="text-align: center">
-			description jawns
+		<td class="showpost">
+			<div style = "font-size:22px">
+			<%= @post.title %></br>
+			</div>
+			<%= @post.category %> in <%= @post.location %> > <%= @post.street%><hr></br>
+			<%= @post.description %>
+
 		</td>
 	</tr>
 </table>
