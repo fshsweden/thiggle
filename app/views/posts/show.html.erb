@@ -1,23 +1,86 @@
-<div class = 'container'>
-<p id="notice"><%= notice %></p>
-<container>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <table>
-  <tr>
-    <td><%= image_tag @post.photo.url(:medium)%></td>
-    <td><div class= "pull-right"> $ <%= @post.price %></div>
-      <p><b><%=@post.title%></b></p>
-      <p>posted by <%=@post_user.username%> at <%= @post.created_at %></p>
-      <p><%= @post.location %> > <%= @post.category %> </p>
-      <p>Description <%= @post.description %></p>
+<tr>
+<td align="center">
 
-    </td>
-  </tr>
-</table>
-</container>
+<div id="controls"></div>
+<div id="loading"></div>
+<div id="slideshow" class ="resizable"></div>
+</td>
+</tr>
+<tr>
+<div id="thumbs">
+    <ul class="thumbs noscript">
+        <li>
+            <div class = "resizable" >
+            <a class="thumb" name="1" href="<%= @post.photo.url(:medium) %>" title="your image title">
+                <%= image_tag @post.photo.url(:thumb) %>
+            </a>
+            </div>
+        </li>
+        <li>
+            <div class = "resizable" >
+            <a class="thumb" name="2" href="<%= @post.photo2.url(:medium)  %>" title="your image title">
+                <%= image_tag @post.photo2.url(:thumb) %>
+            </a>
+            </div>
+        </li>
+        <li>
+            <div class = "resizable">
+            <a class="thumb" name="3" href="<%= @post.photo3.url(:medium)  %>" title="your image title">
+                <%= image_tag @post.photo3.url(:thumb) %>
+            </a>
+            </div>
+        </li>
+        <li>
+            <div class = "resizable" >
+            <a class="thumb" name="4" href="<%= @post.photo4.url(:medium)  %>" title="your image title">
+                <%= image_tag @post.photo4.url(:thumb) %>
+            </a>
+        	</div>
+        </li>
 
-
-
+    </ul>
 </div>
+</tr>
+
+</table>
+
+
+
+
+
+
+<script type="text/javascript">
+			// // We only want these styles applied when javascript is enabled
+			// $('div.navigation').css({'width' : '300px', 'float' : 'left'});
+			// $('div.content').css('display', 'block');
+
+			// $(document).ready(function() {				
+			// 	// Initialize Minimal Galleriffic Gallery
+			// 	$('#thumbs').galleriffic({
+			// 		imageContainerSel:      '#slideshow',
+			// 		controlsContainerSel:   '#controls'
+			// 	});
+			// });
+
+			// $( ".resizable" ).resizable({
+			// 	aspectRatio: true,
+			// 	containment: "parent",
+			// 	delay: 150,
+			// 	handles: "se",
+			// 	ghost: true,
+			// 	helper: "resizable-helper"
+			// });		
+</script>
+
+
+
+
+
+
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

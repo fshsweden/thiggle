@@ -13,7 +13,6 @@
 }
 .slideshow-block{
     position: relative;
-    width: 200px;
     height: 150px;
     overflow: hidden;
 
@@ -36,6 +35,7 @@ a.link:hover{
     visibility:visible;
 }
 
+.ui-resizable-handle { width: 50px; }
 
 .over {
     color: red;

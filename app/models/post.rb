@@ -4,20 +4,20 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_attached_file :photo, { 
     :styles => { 
-      :medium => "400x400^", 
+      :medium => "1024x768", 
       :thumb => "160x160#"
       },
     :convert_options => {
       :thumb => "-quality 75 -strip -gravity center"
     }
     }
-  has_attached_file :photo2, { :styles => { :thumb => "160x160#"}, :convert_options => {
+  has_attached_file :photo2, { :styles => { :medium => "1024x768", :thumb => "160x160#"}, :convert_options => {
       :thumb => "-quality 75 -strip" } }
-  has_attached_file :photo3, { :styles => { :thumb => "160x160#"}, :convert_options => {
+  has_attached_file :photo3, { :styles => { :medium => "1024x768", :thumb => "160x160#"}, :convert_options => {
       :thumb => "-quality 75 -strip" } }
-  has_attached_file :photo4, { :styles => { :thumb => "160x160#"}, :convert_options => {
+  has_attached_file :photo4, { :styles => { :medium => "1024x768", :thumb => "160x160#"}, :convert_options => {
       :thumb => "-quality 75 -strip" } }
-  has_attached_file :photo5, { :styles => { :thumb => "160x160#"}, :convert_options => {
+  has_attached_file :photo5, { :styles => { :medium => "1024x768", :thumb => "160x160#"}, :convert_options => {
       :thumb => "-quality 75 -strip" } }
   acts_as_taggable
   paginates_per 2

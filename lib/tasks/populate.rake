@@ -35,9 +35,18 @@ namespace :db do
       p.category = ["Antiques", "Art", "Baby", "Auto Parts", "Books", "Bicycles", "Boats", "Automobiles", "Cellphones", "Clothing & Accesories", "Collectibles", "Computers", "Electronics", "Furniture", "Garage & Estate Sales", "Health & Beauty", "Jewelery", "Musical Instruments", "Sporting Goods", "Tickets", "Tools", "Toys & Games" ]
       p.location = ["city of chicago", "north chicago", "south chicago", "west chicago", "northwest suburbs", "northwest indiana" ]
       p.price = 1..500
+      p.street = Faker::Address.street_name
       p.created_at 2.years.ago..Time.now
     end
 
-    Post.all.each { |p| p.photo = File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample); p.save! }
+    Post.all.each { 
+      |p| 
+      p.photo  = File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample); 
+      p.photo2 = File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample);
+      p.photo3 = File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample);
+      p.photo4 = File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample);
+      p.save! 
+
+    }
   end
 end

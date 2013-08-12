@@ -16,5 +16,7 @@
 //= require bootstrap-alert
 //= require bootstrap-dropdown
 //= require bootstrap-modal
-// require bootstrap-tab
+//= require bootstrap-tab
 //= require jquery.cycle.all
+//= require jquery.gallerific
+//= require jquery.drag_to_resize
