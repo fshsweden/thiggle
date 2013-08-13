@@ -96,8 +96,6 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to @post}
         format.json { render json: @post, status: :created, location: @post }
-      elsif not @post.errors.present?
-        format.html {redirect_to @post}
       else
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }

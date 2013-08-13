@@ -41,10 +41,47 @@
 					<% if @messages_unread > 0 %>
 					<li><span class="badge badge-important"><%= link_to @messages_unread_text, mailbox_dashboard_index_path, class: 'mailbox-link'%></span></li>
 					<% end %>
-			    
+			    	<ul class="nav nav-pills">
+  <li class="dropdown">
+    <a class="dropdown-toggle"
+       data-toggle="dropdown"
+       href="#">
+        Chicago
+        <b class="caret"></b>
+      </a>
+    <ul class="dropdown-menu">
+      <li style="margin-left:25px">Houston - Beta</li>
+      <li style="margin-left:25px">Los Angeles - Beta</li>
+      <li style="margin-left:25px">New York City - Beta</li>
+      <li style="margin-left:25px">San Francisco - Beta</li>
+      
+
+    </ul>
+  </li>
+</ul>
+
+
 					<li><%= link_to "Sign Out", destroy_user_session_path %></li>
 					
 					<% else %>
+					
+  <li class="dropdown">
+    <a class="dropdown-toggle"
+       data-toggle="dropdown"
+       href="#">
+        Chicago
+        <b class="caret"></b>
+      </a>
+    <ul class="dropdown-menu">
+      <li style="margin-left:25px">Houston - Beta</li>
+      <li style="margin-left:25px">Los Angeles - Beta</li>
+      <li style="margin-left:25px">New York City - Beta</li>
+      <li style="margin-left:25px">San Francisco - Beta</li>
+      
+
+    </ul>
+  </li>
+
 					<li><%= link_to "Register", new_user_registration_path, :class => 'pull-right' %> </li>    
 				
 					
@@ -81,17 +118,7 @@
 							</div>
 							<% end %>
 
-							<li class = "nomargin"><form class = "inline-form">
-								<div class="input-append row-fluid">
-									<input type="text" class="span8 smaller" id ="q" name="q" placeholder="Search">
-									<button type="submit" class="btn btn-info">Search</button>
-								</div>
-							</form>
-
-				
-			
-
-						</li>
+						
 					</form>
 				
 				

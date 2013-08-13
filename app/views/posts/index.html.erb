@@ -44,10 +44,10 @@ jQuery(function($){
 
 
 
-<div class="">
+<div style="display:inline-block">
 	<div class="row-fluid">
 		<div>
-			<div class="well sidebar-nav span4" style= "width:250px">
+			<div class="well sidebar-nav span3 offset1" style= "width:250px">
 				<ul class="nav nav-list">
 					<%= render 'side_search' %>
 
@@ -55,14 +55,14 @@ jQuery(function($){
 		
 		</div><!--/.well -->
 	</div><!--/span-->
-	<div class = "span8">
+	<div class = "span5">
 		<% if flash[:notice] %>
-		    <div class="alert span9">
+		    <div class="alert span5">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 		    	<%= flash[:notice] %></br></div>
 		  <% end %>
 
-		<div style= "font-size:20px">
+<!-- 		<div style= "font-size:20px">
 			<b><%= @posts.count%></b> 
 			<% if params[:q].present?  %>
 			results for "<%=params[:q].strip %>" 
@@ -86,11 +86,11 @@ jQuery(function($){
 				<%end %>
 				</br>
 			
-		</div> 
+		</div>  -->
 		<%# @post = @search.results%>
 		
 		
-		<table class = "post span8">
+		<table class = "post span5 offset1">
 
 			<% @posts.each do |post| %>
 
