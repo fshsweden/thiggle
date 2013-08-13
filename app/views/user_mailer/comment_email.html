@@ -39,7 +39,7 @@
       <tr>
         <td colspan="2" style="padding-top:20px;padding-bottom:10px;text-align:left;background-color:#fff;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;padding-right:50px;padding-left:50px;">
           <p style="margin-top:30px;margin-bottom:30px;margin-right:0px;margin-left:0px;">
-            Hi <%=user.username %>, </br></br>You have a new question on your post "<%= @post.title %>".  User <%= @commenter.username%> asked <%= @comment.text %>.  
+            Hi <%=@user.username %>, </br></br>You have a new question on your post "<%= @post.title %>".  User <%= @commenter.username%> asked <%= @comment.text %>.  
 
 <p style="text-align:center">You can view the message here, <%= @url %></p>
 
