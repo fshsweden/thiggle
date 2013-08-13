@@ -10,6 +10,14 @@
     <input id="q" name="q" type="text" placeholder="Search" class="input-medium"></li></br>
 
 <!-- Prepended text-->
+<li class="nav-header">Search by Location</li>
+<select id="loc" name="loc" class="span10"><option value="city of chicago">city of chicago</option>
+<option value="north chicago" onclick=this.form.submit()>north chicago</option>
+<option value="south chicago" onclick=this.form.submit()>south chicago</option>
+<option value="west chicago" onclick=this.form.submit()>west chicago</option>
+<option value="northwest suburbs" onclick=this.form.submit()>northwest suburbs</option>
+<option value="northwest indiana" onclick=this.form.submit()>northwest indiana</option></select>
+</br>
 
 <li class="nav-header">Search by Price</li>
     Min  <div class="input-prepend" style="margin-left: 3px">
@@ -20,7 +28,7 @@
       <span class="add-on">$</span>
       <input id="max" name="max" class="input-mini" placeholder="<%=params[:max]%>" type="text">
     </div></br>
-</br><div align="center"><button id="seach-btn" name="seach-btn" class="btn btn-primary" >Search!</button></div></br>
+</br><div align="center"><button id="seach-btn" name="seach-btn" class="button-small purple_light rounded3" style= "font-size:16px" >SEARCH</button></div></br>
   <div class="">
 <label class="radio" for="All">
       <input type="radio" name="cat" id="" value="" onclick=this.form.submit()>
@@ -120,6 +128,7 @@
 $('input#min.input-mini').val("<%=params[:min] %>")
 $('input#max.input-mini').val("<%=params[:max] %>")
 $('input#q.input-medium').val(" <%= @query_string %>")
+$('select#loc').val("<%= params[:loc] %>")
 cat = document.getElementById("<%= params[:cat] %>")
 cat.checked = true
 </script>

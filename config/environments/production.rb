@@ -93,11 +93,11 @@ config.action_mailer.default :charset => "utf-8"
     }
     }
     
-    Thiggle::Application.configure do
-      config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
-        [u, p] == ['matt', 'badfish']
-      end
-    end
+    # Thiggle::Application.configure do
+    #   config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
+    #     [u, p] == ['matt', 'badfish']
+    #   end
+    # end
     
     Sunspot.config.solr.url = ENV['WEBSOLR_URL'] if ENV['WEBSOLR_URL']
 end

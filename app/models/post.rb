@@ -28,6 +28,7 @@ class Post < ActiveRecord::Base
     string :category
     time :created_at
     integer :price
+    string :location
   end
 
   

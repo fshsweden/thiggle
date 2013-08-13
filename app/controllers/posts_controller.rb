@@ -25,6 +25,9 @@ class PostsController < ApplicationController
       if params[:max].present?
         with(:price).less_than_or_equal_to(params[:max])
       end
+      if params[:loc].present?
+        with(:location).equal_to(params[:loc])
+      end
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
