@@ -94,14 +94,14 @@
 					renderNavControls:         true,
 					playLinkText:              'Play Slideshow',
 					pauseLinkText:             'Pause Slideshow',
-					prevLinkText:              '&lsaquo; Previous Photo',
-					nextLinkText:              'Next Photo &rsaquo;',
-					nextPageLinkText:          'Next &rsaquo;',
+					prevLinkText:              '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lsaquo; Previous Photo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+					nextLinkText:              '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next Photo &rsaquo;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+					nextPageLinkText:          '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next &rsaquo;',
 					prevPageLinkText:          '&lsaquo; Prev',
 					enableHistory:             false,
 					autoStart:                 false,
-					syncTransitions:           true,
-					defaultTransitionDuration: 900,
+					syncTransitions:           false,
+					defaultTransitionDuration: 700,
 					onSlideChange:             function(prevIndex, nextIndex) {
 						// 'this' refers to the gallery, which is an extension of $('#thumbs')
 						this.find('ul.thumbs').children()

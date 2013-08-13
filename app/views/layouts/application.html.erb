@@ -28,11 +28,13 @@
 		<div class="navbar-inner">  
 			<div class="container">  
 				<%= link_to "Thiggle", root_path, :class => "brand logo-font"%>
-				<ul class="nav nav-pills pull-left" style="margin-top:10px">
+				<div class= "pull-left logo-text" style="color:white; font-size:10px; margin-left: -33px; margin-top:25px">Classified Ads</div></br>
+				<ul class="nav nav-pills pull-left">
 					<li><%= link_to "Explore", posts_path %></li>
 					<li><%= link_to "New Post", new_post_path%></li>
+				
 				</ul>
-				<ul class="nav nav-pills pull-right" style="margin-top:10px">
+				<ul class="nav nav-pills pull-right">
 					<% if user_signed_in? %>
 					<li class="top-nav-pills"><%= link_to @display_username, mailbox_dashboard_index_path, :class => 'pull-right' %></li>
 			   		
@@ -44,6 +46,7 @@
 					
 					<% else %>
 					<li><%= link_to "Register", new_user_registration_path, :class => 'pull-right' %> </li>    
+				
 					
 					
 					<!-- Button to trigger modal -->
@@ -90,7 +93,8 @@
 
 						</li>
 					</form>
-
+				
+				
 				</ul>
 	       
 

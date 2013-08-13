@@ -17,6 +17,11 @@
     overflow: hidden;
 
 }
+
+.logo-text{
+	color:white; font-size:10px; margin-left: -33px; margin-top:25px;
+}
+
 a.link{
     position:absolute;
     height: 150px;
@@ -195,6 +200,10 @@ hr{
 .navbar .brand:hover{
     opacity: .6;
 }
+
+.logo-text:hover{
+	opacity: .6;
+};
 
 .navbar .nav .test{
  font-size: 13px;
