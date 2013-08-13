@@ -1,14 +1,51 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <p>
-      <%=@user.username %>, you have a new message waiting for you on Thiggle.  <br/>
-    </p>
-    <p>
-      View it here <%= @url %>
-    </p>
-  </body>
-</html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+  <title>Thiggle Classifieds</title>
+  
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Welcome to Thiggle!">
+<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+</head>
+<body style="font-family:'Helvetica Neue',Helvetica,arial;color:#999;font-size:14px;background-color:#f5f4f3;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;padding-top:40px;line-height:23px;"><style>
+  body{
+    font-family: 'Helvetica Neue',Helvetica,arial;
+    color:#999;
+    font-size:14px;
+        background:#f5f4f3;
+    padding-top:40px;
+    line-height:23px;
+  }
+  .main-table tr td{
+  }
+  h1{
+    margin:0px;
+    font-family: 'Helvetica Neue',Helvetica,arial;
+      font-weight: 200;
+    color:#999;
+    font-size:28px;
+    line-height:30px;
+  }
+  a{
+    color:#40b6cb;
+    text-decoration:none;
+  }
+  </style>
+    <table width="620" cellpadding="0" cellspacing="0" border="0" class="main-table" style="margin-top:0;margin-bottom:10px;margin-right:auto;margin-left:auto;">
+      <tbody><tr>
+        <td colspan="2" style="color:#e75640;font-weight:bold;font-size:41px;text-align:center;padding-bottom:50px;">
+          <a href="www.thiggle.com" style="color:#5b5ea6;text-decoration:none;font-family: 'Grand Hotel', cursive;text-align:center;font-size:48px">Thiggle</a>
+          <h3 style="color:#999;font-size:24px;font-weight:200;font-family:'Helvetica Neue',Helvetica,arial;">Local Classified Ads</h3>
+        </td> 
+      </tr>
+      <tr>
+        <td colspan="2" style="padding-top:20px;padding-bottom:10px;text-align:left;background-color:#fff;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;padding-right:50px;padding-left:50px;">
+          <p style="margin-top:30px;margin-bottom:30px;margin-right:0px;margin-left:0px;">
+            Hi <%=user.username %>, </br></br>You have a new message in your inbox.  </br></br>Your inbox is where you can communicate with others users regarding Thiggle listings.  You can set up times to meet, share contact information, or ask questions.
+
+<p style="text-align:center">You can view the message here, <%= @url %></p>
+
+
+<p style="margin-top:30px;margin-bottom:30px;margin-right:0px;margin-left:0px;">
+Thanks,
+<br>
+The Thiggle Team
+</p>
