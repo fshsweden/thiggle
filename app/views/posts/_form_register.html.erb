@@ -26,7 +26,7 @@ function toggle4(showHideDiv) {
 
   <%= f.fields_for :posts do |post_fields| %>
 
-    <%= post_fields.text_field :title, label: 'Title' %>
+    <%= post_fields.text_field :title, label: 'Title', :autofocus => true %>
     <%= post_fields.text_field :price, prepend: '$', label: 'Price', :class => "span1" %>
    
     <%= post_fields.select :location, ["city of chicago", "north chicago", "south chicago", "west chicago", "northwest suburbs", "northwest indiana" ] %>
@@ -48,7 +48,7 @@ function toggle4(showHideDiv) {
   <%end%>
 
     <div>
-  <%= f.text_field :username, :autofocus => true %></div>
+  <%= f.text_field :username %></div>
 
   <div>
   <%= f.email_field :email %></div>
