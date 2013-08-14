@@ -85,3 +85,6 @@ gem 'mandrill-api'
 gem 'json'
 #web server for heroku
 gem 'unicorn'
+
+#get data from 3taps
+gem 'httparty'
