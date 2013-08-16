@@ -34,7 +34,7 @@ class Post < ActiveRecord::Base
   
   validates :title, :description, :category, :photo, :presence => true
   #validates :user_id, :numericality => {:greater_than_or_equal_to => 1}
-  validates_length_of :description, :minimum => 5, :maximum => 200
+  validates_length_of :description, :minimum => 5, :maximum => 2200
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates_attachment_size :photo2, :less_than => 5.megabytes
   validates_attachment_size :photo3, :less_than => 5.megabytes
