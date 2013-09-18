@@ -1,6 +1,21 @@
-=todo for thiggle
+=Thiggle
+Twitter for Classified Ads
 
-user reputation added on post
-hide reply div
-validate attachment type before upload
-figure out good file limit size
+A Ruby on Rails web application that wants to be the twitter for classified ads.  
+Some features include:
+  
+  -User Accounts
+    Sign up with your email and log in with either your username or email.  No longer will your precious email address be accesible to the world.  
+  
+  -Messaging
+    Send and receive messages through your account to other memebers of Thiggle.  Work out meeting times and bargain through the conversation view in your dashboard
+  
+  -Advanced Search
+    Search classified ads easily and deeply.  In addition, almost everything on the ads page is clickable and triggers a search based on that criteria.
+    
+  -Web Scraper
+    The results you see aren't only limited to posts on Thiggle.  We smartly and legally scrape Google's cache of data to get you listing from the top classified sites.
+    
+  -Cool Javascript
+    Scroll your mouse over to see the multiple pictures associated with a particular listing without even clicking on anything!
+    
